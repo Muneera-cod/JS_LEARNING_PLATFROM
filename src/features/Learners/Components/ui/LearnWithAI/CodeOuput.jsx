@@ -1,8 +1,8 @@
-import React from 'react'
+
 
 function CodeOuput({ output }) {
   return (
-    <div className='w-full h-full text-white p-4'>
+    <div className='w-full  h-full  dark:text-white text-black p-4 '>
         {output}
     </div>
   )
