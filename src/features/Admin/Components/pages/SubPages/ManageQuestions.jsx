@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Top from '../../ui/Top'
 import QuestionContainer from '../../ui/ManaageQuestions/QuestionContainer'
 import { IconArrowsSort } from '@tabler/icons-react'
@@ -38,9 +38,9 @@ if(isLoading){
 }
   return (
   <>
-       {subview===0 && <><Top buttonText={'Add New Question'} searchbar={false} buttonclick={addQSTNClick}/>
+       {subview===0 && <><Top buttonText={'Add New Question'} searchbar={true} buttonclick={addQSTNClick} />
        <div className='flex flex-col gap-[0.5rem] ' >
-        <div className='flex justify-between items-center'>
+        <div className='flex justify-between my-2 items-center'>
             <Select   
               checkIconPosition="right"
               

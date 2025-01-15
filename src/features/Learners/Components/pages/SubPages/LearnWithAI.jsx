@@ -8,7 +8,7 @@ import { createPortal } from 'react-dom';
 function LearnWithAI() {
   const [ aiChatBox,setAiChatBox ] = useState(false)
   const [ codeInput , setCodeInput ] = useState("")
-  const [ output ,setOutput ] = useState("")
+  const [ output ,setOutput ] = useState(null)
   const handleCodeRun= async()=>{
     if (!codeInput.trim()) {
       setOutput("Please enter some code to execute.")

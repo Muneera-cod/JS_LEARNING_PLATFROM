@@ -23,6 +23,7 @@ function Learners() {
             }     
           
     },[location.pathname])
+    
   return (
     <LearnerLayout>
         { currview === 0 && <LearnerHome/>}

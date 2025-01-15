@@ -5,7 +5,8 @@ import { setSubView } from "../../../../../redux/reducers/View/ViewSlice"
 import { Loader } from "@mantine/core"
 import { useFetchSpecificQuestionProgressQuery } from "../../../../../redux/Api/UserProgressApiSlice"
 import { auth } from "../../../../../utils/config/firebaseConfig"
-function QuestionContainerLearner({ id, question , level ,category}) {
+import { useEffect } from "react"
+function QuestionContainerLearner({ id, question , level ,category ,setSolvedArray}) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const user = auth.currentUser
@@ -15,6 +16,12 @@ function QuestionContainerLearner({ id, question , level ,category}) {
     navigate(`${id}`);
     dispatch(setSubView(1))
  }
+ useEffect(()=>{
+  if(data){
+
+    setSolvedArray((prev)=>[...prev,id])
+  }
+ },[data])
  if(isLoading ){
          return <div className='min-h-[40rem] w-full flex items-center justify-center'><Loader color="yellow" type="dots" /></div>
        }
@@ -27,7 +34,7 @@ function QuestionContainerLearner({ id, question , level ,category}) {
       </div>
       
       <div className="border-[1px] flex gap-4 border-primaryClr sm:min-w-full md:min-w-fit h-fit px-6 py-2 items-center justify-center rounded-md bg-primaryClr opacity-80">
-          { isSuccess && <p>{ data ? 'Solved'  : 'Solve Challenge'}</p>}  { data && <IconCheckbox/> }
+          { isSuccess && <p>{ data ? 'Solved' : 'Solve Challenge'}</p>}  { data && <IconCheckbox/> }
            
         </div> 
  </div>

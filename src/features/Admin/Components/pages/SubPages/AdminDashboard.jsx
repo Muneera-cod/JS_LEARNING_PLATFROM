@@ -1,4 +1,3 @@
-import React from 'react'
 import WeeklyRanking from '../../../../../Components/ui/WeeklyRanking'
 import AdminProgressCard from '../../ui/AdminDashboard/AdminProgressCard'
 import LatestStudentJoined from '../../ui/AdminDashboard/LatestStudentJoined'

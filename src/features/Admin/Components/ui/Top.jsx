@@ -8,7 +8,7 @@ function Top({buttonText,searchbar,buttonclick}) {
        <div className={`flex ${!searchbar && 'justify-end'} items-center px-2 pb-4 ${searchbar && 'justify-between'}`}>
        
         {searchbar && <SeachBar />}
-        <Button className='bg-green-500 px-20 py-10' onClick={buttonclick}>{buttonText}</Button>
+        <Button color='yellow' onClick={buttonclick}>{buttonText}</Button>
        </div>
     </>
   )

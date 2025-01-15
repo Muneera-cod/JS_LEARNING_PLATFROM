@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import ProgressCard from '../../../../../Components/ui/ProgressCard'
 import WeeklyRanking from '../../../../../Components/ui/WeeklyRanking'
 import { auth } from '../../../../../utils/config/firebaseConfig'
@@ -8,6 +8,7 @@ import { useFetchUserProgressQuery } from '../../../../../redux/Api/UserProgress
 import { useFetchQuestionsQuery } from '../../../../../redux/Api/QuestionApiSlice'
 import { Loader } from '@mantine/core'
 function LearnersHome() {
+   useEffect(()=>{window.scrollTo(0, 0)},[])
   const user = auth.currentUser
   const { data: progressData, isLoading, isError, isSuccess ,error } = useFetchUserProgressQuery( user.uid )
   const { data: questions ,isLoading: loading , isError:errorIS } = useFetchQuestionsQuery()
@@ -36,7 +37,7 @@ function LearnersHome() {
       {/* <button  type='submit' className={`w-1/4 ml-auto mx-4 mb-10 bg-secondaryClr  border-2 border-primaryClr text-mainClr p-3 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>Learn With AI</button> */}
       
       
-          <ProgressCard title={'Continue your learning'} buttonText={'Continue'} value={ finduserCompletedQuestions?.length / questions?.length * 100 }/>
+          <ProgressCard title={'Continue your learning'} buttonText={'Continue'} value={ finduserCompletedQuestions?.length / questions?.length * 100 } navigation={'view_questions'}/>
        
         <WeeklyRanking text={'Do more challenges to stay in Top 5'}/>
       </div>

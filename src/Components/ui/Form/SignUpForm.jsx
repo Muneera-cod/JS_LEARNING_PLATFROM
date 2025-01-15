@@ -28,7 +28,7 @@ function SignUpForm({setCurrForm}) {
   useEffect(()=>{
        if(isSuccess){
          notifications.show({
-           message: 'New Question added',
+           message: 'Signed Up successfully',
            withCloseButton: true,
            autoClose: 5000,
             color: 'green'
@@ -73,7 +73,7 @@ useEffect(()=>{
       setErrorMsg(err.message)
       errorref.current.focus()
       notifications.show({
-        message: 'Un error ocurred',
+        message: 'An error ocurred',
         withCloseButton: true,
         autoClose: 5000,
          color: 'red'
@@ -110,7 +110,7 @@ useEffect(()=>{
               Password
              <input onChange={(e)=>SetPwd(e.target.value)}  value={pwd} aria-describedby='pwdnote' aria-invalid={!validPwd} aria-label='password' required 
               placeholder="Enter your password" type='password' id='password' name='password' className='text-black bg-lightBgclr font-semibold rounded-md border-[3px] border-primaryClr p-3'  ></input>
-              <p id='pwdnote' className={`${ pwd && !validPwd ?'text-[14px]':'hidden'} text-[14px] text-red-800`} aria-live='polite'>{!PWD_REGEX.test(pwd)?'Password should be atleast 8 characters':''}</p>
+              <p id='pwdnote' className={`${ pwd && !validPwd ?'text-[14px]':'hidden'} text-[14px] text-red-800`} aria-live='polite'>{!PWD_REGEX.test(pwd)?'Password should be atleast 6 characters':''}</p>
            </label>
            <label htmlFor='confirm_pwd' className='flex flex-col gap-1  text-sm text-textCLr dark:text-darkmodeTextClr' >
                Re-Enter Password
@@ -120,7 +120,7 @@ useEffect(()=>{
            </label>
          </fieldset>
          <div className='flex items-center w-full justify-center'> 
-              <button disabled={isLoading} type='submit' className={`bg-secondaryClr  border-2 border-primaryClr text-mainClr p-3 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>SignUp</button>
+              <button disabled={isLoading} type='submit' className={`bg-secondaryClr  border-2 border-primaryClr text-mainClr p-3 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>{ isLoading ? 'Signing...' : 'SignUp' }</button>
          </div>
         
        </form>

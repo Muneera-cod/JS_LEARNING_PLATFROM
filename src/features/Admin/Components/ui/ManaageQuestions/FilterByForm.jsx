@@ -8,7 +8,7 @@ function FilterByForm({ setFilter }) {
     
    
         <div className='flex flex-col  gap-[24px]' >
-                <div className='flex justify-between py-[12px] border-b-[0.5px] border-[#B5B5B5] h-fit min-w-[232px]' onClick={()=>handleToggle('brand')}>
+                <div className='flex justify-between py-[12px] border-b-[0.5px] border-[#B5B5B5] h-fit min-w-[232px]' >
                     <p className='text-[16px] font-[500] leading-[24px] tracking-[.03375em]'>Catogary</p>
                   
                 </div>
@@ -16,8 +16,8 @@ function FilterByForm({ setFilter }) {
 
         </div> 
         <div className='flex flex-col  gap-[24px]'>
-                <div className='flex justify-between py-[12px] border-b-[0.5px] border-[#B5B5B5] h-fit min-w-[232px]' onClick={()=>handleToggle('build in memory')}>
-                    <p className='text-[16px] font-[500] leading-[24px] tracking-[.03375em]'>Order by latest</p>
+                <div className='flex justify-between py-[12px] border-b-[0.5px] border-[#B5B5B5] h-fit min-w-[232px]' >
+                    <p className='text-[16px] font-[500] leading-[24px] tracking-[.03375em]'>Filter by date</p>
                    
                 </div>
              

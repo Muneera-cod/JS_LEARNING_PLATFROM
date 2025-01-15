@@ -62,7 +62,7 @@ console.log('errorMsg',errorMsg)
           </label>
         </fieldset>
         <div className='flex items-center w-full justify-center'> 
-          <button disabled={isLoading} className={`bg-secondaryClr  border-2 border-primaryClr text-mainClr p-3 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>Login</button>
+          <button disabled={isLoading} className={`bg-secondaryClr  border-2 border-primaryClr text-mainClr p-3 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>{ isLoading ? 'Logging...' :'Login'}</button>
         </div>
           
         </form>

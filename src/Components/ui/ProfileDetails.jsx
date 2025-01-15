@@ -36,7 +36,7 @@ function ProfileDetails() {
     <div className='flex flex-col justify-between px-10 py-16 sm:gap-[1rem] md:gap-[2px] h-full shadow  sm:basis-full lg:basis-1/2 rounded-md opacity-50'>
       
     <div className='flex flex-col w-full sm:min-h-[300px] gap-[1rem]'>
-    { !auth.currentUser?.emailVerified ? <button className='p-4 bg-primaryClr hover:bg-secondaryClr rounded-md' onClick={handleVerifyEmail}>Verify Email</button> : null }
+    { !auth.currentUser?.emailVerified ? <button className='p-4 bg-primaryClr hover:bg-secondaryClr rounded-md' onClick={handleVerifyEmail}>Verify your Email</button> : null }
 
      <div className='flex flex-col  py-2 gap-2'>
         <p>Informations</p>
@@ -49,7 +49,7 @@ function ProfileDetails() {
       </div>
      <p className='text-[14px]'>{  auth.currentUser?.phoneNumber ? auth.currentUser?.phoneNumber : 'Not added'}</p>
        </div>
-       <div className='flex  justify-between items-center'>
+       {/* <div className='flex  justify-between items-center'>
       <div className='flex  gap-2 items-center'>
       <IconPassword className='w-[15px] h-[15px]' /><p className='text-[14px]'>Password</p>
       </div>
@@ -57,7 +57,7 @@ function ProfileDetails() {
 
       
        
-       </div>
+       </div> */}
        <div className='flex  justify-between items-center'>
       <div className='flex  gap-2 items-center'>
       {darkmode?<IconMoonFilled className='w-[15px] h-[15px]'  title='lightmode'/>:<IconMoon className='w-[15px] h-[15px]'  title='darkmode'/>}
@@ -72,9 +72,9 @@ function ProfileDetails() {
         <div className='flex  justify-between w-full'>
           <p>LogOut</p><IconLogout2 onClick={()=>{logout();dispatch(setView(0));navigate('/')}}/>
         </div>
-        <div className='flex  justify-between w-full '>
+        {/* <div className='flex  justify-between w-full '>
           <p>Delete</p><IconTrashFilled onClick={()=>{logout();dispatch(setView(0));navigate('/')}}/>
-        </div>
+        </div> */}
     </div>
 </div>
   )

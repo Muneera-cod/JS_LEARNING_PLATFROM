@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useFetchUserProgressQuery } from "../../redux/Api/UserProgressApiSlice"
 import { Loader } from "@mantine/core"
 function WeeklyRankingTable({ learner , rankMap , setRankMap ,rank}) {

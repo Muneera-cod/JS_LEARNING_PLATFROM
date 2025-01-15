@@ -65,9 +65,31 @@ function CodeEditor() {
               }) 
               setPopUp(true)
             } 
+            else{
+              notifications.show({
+                message: `TESTCASE FAILED...TRY AGAIN`,
+                withCloseButton: true,
+                autoClose: 5000,
+                 color: 'red'
+              }) 
+            }
             setOutput(JSON.stringify(results, null, 2));
         } catch (error) {
+           notifications.show({
+            message: `${error.message} or if there is command at top of code  please remove`,
+            withCloseButton: true,
+            autoClose: 5000,
+             color: 'red'
+          }) 
             setOutput(`Error: ${error.message}`);
+            
+        }
+        finally{
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+          });
+          
         }
     };
   

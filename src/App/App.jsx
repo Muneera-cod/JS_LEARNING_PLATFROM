@@ -24,7 +24,16 @@ function App() {
       setInitialized(true);
     }
   }, [data,authInitialized]);
-  
+
+  useEffect(() => {
+    const htmlElement = document.querySelector('html');
+    if (!darkmode) {
+        htmlElement.classList.remove('dark');
+    } else {
+        htmlElement.classList.add('dark');
+    }
+}, [darkmode]);
+
 
  
 
@@ -39,14 +48,8 @@ function App() {
   }
 
 
-  return (
- 
-     <main className={` ${ darkmode  ? 'dark' : '' }`} >
-        <RouterProvider router={router}></RouterProvider>
-    </main>
- 
-   
-  
+  return ( 
+      <RouterProvider router={router}></RouterProvider>
   )
 }
 

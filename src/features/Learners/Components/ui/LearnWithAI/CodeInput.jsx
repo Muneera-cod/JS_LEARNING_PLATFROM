@@ -1,10 +1,17 @@
-import React from 'react'
+import Editor from "@monaco-editor/react"
+import { useSelector } from "react-redux";
 
-function CodeInput({ CodeInput , setCodeInput }) {
+function CodeInput({ codeInput , setCodeInput }) {
+  const isDarkmode=useSelector((state)=>state.theme.isDarkmode)
+
   return (
-    <textarea placeholder='Type your code here' className='bg-transparent w-full  h-full p-4 ' value={CodeInput} onChange={(e)=>{setCodeInput(e.target.value)}}>
-
-    </textarea>
+    <Editor
+    value={codeInput} 
+    onChange={(value) => setCodeInput(value || "")} 
+    height="75vh"
+    defaultLanguage="javascript"
+     theme={`${isDarkmode ? 'vs-dark' :'vs-light'}`}
+/>
   )
 }
 

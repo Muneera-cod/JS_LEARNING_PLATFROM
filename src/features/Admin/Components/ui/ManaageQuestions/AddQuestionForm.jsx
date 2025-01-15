@@ -87,10 +87,7 @@ const handleSubmit=async(e)=>{
       });
         }
 }
-if(isLoading){
- return <div className='min-h-[40rem] w-full flex items-center justify-center'><Loader color="yellow" type="dots" /></div>
-  
-}
+
   return (
   <form onSubmit={handleSubmit} className='flex flex-col text-textCLr dark:text-darkmodeTextClr items-start p-[20px] gap-[20px] boxshadow rounded-[15px] min-h-[30vh]  w-full '>
     <div className='flex justify-between items-center w-full text-[14px]'><p className='text-secondaryClr  font-[700]'>Fill Out</p><IconX className='w-[20px] h-[20px]' onClick={()=>{navigate('/manage_questions');dispatch(setSubView(0))}}/></div>

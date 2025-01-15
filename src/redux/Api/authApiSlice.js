@@ -88,29 +88,36 @@ export const authApi = createApi({
       },
       invalidatesTags: ['Auth'],
     }),
-    updateEmail: builder.mutation({
-      queryFn: async ({ newEmail }) => {
-        try {
-          const user = auth.currentUser;
-          if (!user) {
-            throw new Error('No authenticated user found');
-          }
+    // updateEmail: builder.mutation({
+    //   queryFn: async ({ newEmail , currentPassword }) => {
+    //     try {
+    //       const user = auth.currentUser;
+    //       if (!user) {
+    //         throw new Error('No authenticated user found');
+    //       }
+          
+    //        // Step 1: Prepare credentials for re-authentication
+    //        const credential = EmailAuthProvider.credential(user.email, currentPassword);
+    //        await reauthenticateWithCredential(user, credential);
+   
+    //        // Update the email
+    //        await updateEmail(user, newEmail);
+   
+    //        // Send email verification after updating
+    //        await sendEmailVerification(user);
     
-          // Update the email in Firebase Authentication
-          await updateEmail(user, newEmail);
+    //       // Update the email in Firestore
+    //       const userRef = doc(db, 'users', user.uid);
+    //       await updateDoc(userRef, { email: newEmail });
     
-          // Update the email in Firestore
-          const userRef = doc(db, 'users', user.uid);
-          await updateDoc(userRef, { email: newEmail });
-    
-          return { data: 'Email updated successfully' };
-        } catch (error) {
-          return { error: { message: error.message } };
-        }
-      },
-      invalidatesTags: ['Auth'],
-    }),
+    //       return { data: 'Email updated successfully' };
+    //     } catch (error) {
+    //       return { error: { message: error.message } };
+    //     }
+    //   },
+    //   invalidatesTags: ['Auth'],
+    // }),
   }),
 });
 
-export const { useSignUpMutation, useLoginMutation, useLogoutMutation, useCheckAuthQuery , useUpdateProfileMutation ,useUpdateEmailMutation } = authApi;
+export const { useSignUpMutation, useLoginMutation, useLogoutMutation, useCheckAuthQuery , useUpdateProfileMutation  } = authApi;

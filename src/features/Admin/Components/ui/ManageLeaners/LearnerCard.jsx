@@ -19,7 +19,7 @@ function LearnerCard({learner,questions,index}) {
      {progressLoading  ? <Loader color="yellow" size="xs" /> :<><div className='flex-1'>
                {progressData?.length }
       </div>
-       {progressData?.length >= questions.length  / 2 ? <IconTrophyFilled color='#FFD700'/> : ( progressData?.length >= questions.length / 4 ? <IconTrophyFilled color='silver'/> :(progressData?.length === 0? <IconLineDotted/> : <IconTrophyFilled color='grey'/>))}</>}
+       {progressData?.length >= (3 * questions.length)  / 4 ? <IconTrophyFilled color='#FFD700'/> : ( progressData?.length >= questions.length / 2 ? <IconTrophyFilled color='#cd7f32'/> :(progressData?.length === 0? <IconLineDotted/> : <IconTrophyFilled color='grey'/>))}</>}
   </div>
   )
 }
