@@ -1,20 +1,29 @@
 import WeeklyRanking from '../../../../../Components/ui/WeeklyRanking'
-import AdminProgressCard from '../../ui/AdminDashboard/AdminProgressCard'
 import LatestStudentJoined from '../../ui/AdminDashboard/LatestStudentJoined'
+import { auth } from '../../../../../utils/config/firebaseConfig'
+import Activity from '../../../Components/ui/Profile/Activity'
 function AdminDashboard() {
+  const user = auth.currentUser
   return (
     <>
      
-    <AdminProgressCard/>
     <div className='flex flex-col  w-full'>
-    <div className='basis-1/3 p-10 flex  flex-col items-center justify-center '> 
-           <WeeklyRanking />
-       </div>
-       <div className='basis-2/3 p-10  flex flex-col '>
-       {/* <div className='flex flex-col gap-[1.5rem] items-center justify-center'>
-       <p className='text-left text-[30px] font-[700] w-full'>Js Learning Platform</p>
-       <p className=''>Learn how to use JavaScript — a powerful and flexible programming language for adding website interactivity.</p>
-       </div> */}
+    <div className='basis-1/3 sm:p-2 md:p-4 gap-6 flex sm:flex-col md:flex-row items-center justify-center '>
+      <div className='flex flex-col flex-1  w-full'>
+           <p className='flex-1 text-left text-[30px] font-[700] px-4 py-20 max-w-fit'>Hello...{user.displayName}......👋</p>
+        <div className='flex flex-col  gap-2'>
+         <Activity/>
+        </div>  
+      </div> 
+          
+      <div className='flex flex-col md:max-w-full'>
+      <WeeklyRanking />
+      </div>
+     
+    </div>
+   
+       <div className='basis-2/3 sm:p-2 md:p-4   flex flex-col w-full'>
+     
       
            <LatestStudentJoined/>
        

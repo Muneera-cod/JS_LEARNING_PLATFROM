@@ -10,6 +10,7 @@ import { Outlet } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useFetchQuestionsQuery } from '../../../../../redux/Api/QuestionApiSlice'
 import { Loader } from '@mantine/core'
+import '@mantine/core/styles.css'
 import FilterByForm from '../../ui/ManaageQuestions/FilterByForm'
 function ManageQuestions() {
  const navigate=useNavigate()
@@ -43,12 +44,11 @@ if(isLoading){
         <div className='flex justify-between my-2 items-center'>
             <Select   
               checkIconPosition="right"
-              
                classNames={{
-                input: 'border border-green-500 rounded-lg p-2 focus:ring-2 focus:ring-green-400',
+                input: 'border border-yellow-500 rounded-lg p-2 focus:ring-2 focus:ring-yellow-400',
                 label: 'text-blue-600 font-semibold',
-                dropdown: 'bg-white shadow-lg border border-gray-200 rounded-lg',
-                item: 'hover:bg-green-100 cursor-pointer p-2 rounded-md',
+                dropdown: 'bg-primaryClr shadow-lg border border-gray-200 rounded-lg',
+                item: 'hover:bg-yellow-800 cursor-pointer p-2 rounded-md',
               }}  
             data={['All','Easy','Medium','Hard']} placeholder="Filter by Level"  value={selectedLevel} onChange={handleFilterChange}/>
             <div className='flex items-center gap-2 opacity-60' onClick={()=>{setFilter(true)}}><IconArrowsSort className='max-w-6 max-h-6'/><p className='sm:text-sm lg:text-md'>Filter</p></div>

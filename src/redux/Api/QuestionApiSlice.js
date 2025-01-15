@@ -45,7 +45,7 @@ export const questionApi = createApi({
                 const highestOrderDoc = querySnapshot.docs[0];
                 newOrder = highestOrderDoc.data().order + 1;
             }
-            const newQuestion = {...question, order: newOrder, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), isUpdated: false, numOfLearnersCompleted: 0};
+            const newQuestion = {...question, order: newOrder, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), isUpdated: false };
            await addDoc(collection(db, 'questions'), newQuestion);
            return { data: 'Question added successfully' };
         } catch (error) {

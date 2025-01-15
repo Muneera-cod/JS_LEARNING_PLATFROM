@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setSubView } from '../../../../../redux/reducers/View/ViewSlice'
 import { useAddQuestionMutation } from '../../../../../redux/Api/QuestionApiSlice'
-import { Loader } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 import '@mantine/notifications/styles.css';
 function AddQuestionForm() {

@@ -1,15 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IconX } from '@tabler/icons-react'
 import { setSubView } from '../../../../../redux/reducers/View/ViewSlice'
 import { useDispatch } from 'react-redux'
 import { useFetchSingleQuestionQuery } from '../../../../../redux/Api/QuestionApiSlice'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Loader } from '@mantine/core'
+import { useFetchLearnersQuery } from '../../../../../redux/Api/LearnerApiSlice'
+import { useFetchSpecificQuestionProgressQuery } from '../../../../../redux/Api/UserProgressApiSlice'
 function QuestionView() {
-    const dispatch=useDispatch()
-    const navigate=useNavigate()
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const { question_id } = useParams()
-    const {data,isLoading,isError,isSuccess}=useFetchSingleQuestionQuery(question_id)
+    const { data,isLoading,isError,isSuccess }=useFetchSingleQuestionQuery(question_id)
+    const { data: learners , isLoading: learnersLoading , isError: learnersError} = useFetchLearnersQuery()
+    // const { data: questionProgress , isLoading: questionProgressLoading , isError: questionProgressError } = useFetchSpecificQuestionProgressQuery()
+
+    // useEffect(()=>{
+    //   if(data && learners){
+    //     const updatedData = [...learners].map((x)=> x.id)
+    //     updatedData.map((x)=> x  )
+        
+    //   }
+    // },[learners])
     if(isLoading){
         return <div className='min-h-[40rem] w-full flex items-center justify-center'><Loader color="yellow" type="dots" /></div>
       }
@@ -45,20 +57,20 @@ function QuestionView() {
       <div className='basis-3/4 flex flex-col gap-2 w-full'>
         <p className='font-[700]'>Test Cases</p>
         { data?.textCases?.length!==0 ? data?.textCases?.map((testCase,index)=>{return( 
-          <>
+          <div key={index} className='flex flex-col gap-[3px]' >
         <div className='border-2 p-4 shadow-md rounded-md border-[0.5px] border-primaryClr bg-primaryClr'>
          <p  className='font-[700] px-2 '>Input :<span className='font-[400] mx-6'>{testCase.input}</span></p>
         </div>
         <div className='border-2 p-4 shadow-md rounded-md border-[0.5px] border-primaryClr bg-primaryClr'>
          <p className='font-[700] px-2'>Output :<span className='font-[400] mx-6'>{testCase.output}</span></p>
         </div>
-        </>
+        </div>
        )}):<div className='border-2 p-4 shadow-md rounded-md border-[0.5px] border-primaryClr bg-primaryClr'> No Test Cases added</div>}        
       </div>
-          <div className=' basis-1/4 py-[20px] px-[20px] flex items-center justify-center shadow-md rounded-md border-[0.5px] border-lighterSeocndaryClr  shadow-lg bg-secondaryClr bg-opacity-10  dark:text-white text-textCLr '>
-             <p className=''>Total Number of students completed:<span className='text-lighterSeocndaryClr font-[700] tracking-widest text-lg mx-2'>{data?.numOfLearnersCompleted}</span></p>
+          {/* <div className=' basis-1/4 py-[20px] px-[20px] flex items-center justify-center shadow-md rounded-md border-[0.5px] border-lighterSeocndaryClr  shadow-lg bg-secondaryClr bg-opacity-10  dark:text-white text-textCLr '>
+             <p className=''>Total Number of students completed:<span className='text-lighterSeocndaryClr font-[700] tracking-widest text-lg mx-2'>{}</span></p>
        
-          </div>
+          </div> */}
           
       </div>
       

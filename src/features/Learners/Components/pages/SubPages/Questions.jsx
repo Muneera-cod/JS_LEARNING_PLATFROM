@@ -8,6 +8,7 @@ import { Outlet } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
 import { setSubView } from '../../../../../redux/reducers/View/ViewSlice'
 import { useNavigate } from 'react-router-dom'
+import '@mantine/core/styles.css';
 function Questions() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
