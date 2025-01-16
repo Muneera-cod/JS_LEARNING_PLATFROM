@@ -23,7 +23,7 @@ function LearnersHome() {
       }
   return (
     <>
-    <div className='flex sm:flex-col lg:flex-row w-full'>
+    <div className='flex sm:flex-col lg:flex-row w-full sm:gap-6 md:gap-2'>
       <div className='basis-1/2 flex flex-col '>
            <div className='basis-1/4 '>
                 <p className='dark:text-darkmodeTextClr text-lightmodeTextClr font-[700] text-2xl p-14'>Hello....{`${ user?.displayName || 'user'}`}...👋</p>

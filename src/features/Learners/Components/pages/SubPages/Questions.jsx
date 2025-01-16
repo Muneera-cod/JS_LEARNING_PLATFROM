@@ -47,7 +47,7 @@ function Questions() {
       <div className='flex justify-between items-center'>
         <SeachBar searchValue={searchValue} onChangeFunction={handleSearchChange} text={'by Title'}/>
          <button onClick={()=>{dispatch(setSubView(0));
-                 navigate('/learn')}} className={`mx-4 my-6 bg-secondaryClr  border-2 border-primaryClr text-mainClr px-4 py-3 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>Learn with AI</button>
+                 navigate('/learn')}} className={`mx-20 my-6 bg-secondaryClr  border-2 border-primaryClr text-mainClr px-3 py-[6px] min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>Learn with AI</button>
       </div>
       
 

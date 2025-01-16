@@ -22,7 +22,7 @@ let lastScore = null;
     <>   
     <p className='text-[18px] font-[700] text-lightmodeTextClr dark:text-darkmodeTextClr leading-[50px] px-2 tracking-wide opacity-30'>Weekly Ranking</p>
 
-    <div className='bg-primaryClr p-6 rounded-xl shadow-md gap-2 flex sm:flex-col md:flex-row scaleLarge'>
+    <div className='bg-primaryClr p-6 rounded-xl shadow-md gap-4 flex sm:flex-col xl:flex-row scaleLarge'>
     <div className=" rounded-lg min-w-[200px] grid grid-cols-3">
       
           <div className="py-3 px-4 border-[0.1px] border-primaryClr text-left">Name</div>

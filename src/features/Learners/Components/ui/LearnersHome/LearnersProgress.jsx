@@ -32,7 +32,7 @@ function LearnersProgress({ id }) {
           return <div className='min-h-[40rem] w-full flex items-center justify-center'><Loader color="yellow" type="dots" /></div>
         }
   return (
-    <div className='flex sm:flex-col-reverse shadow-md md:flex-row w-full bg-primaryClr p-6 rounded-lg gap-6 scaleLarge'>
+    <div className='flex sm:flex-col-reverse shadow-md md:flex-row w-full bg-primaryClr sm:p-4 md:p-6 rounded-lg gap-6 scaleLarge'>
         <div className='flex flex-col p-2 md:basis-1/4'>
         <Flex align={'center'} justify={'center'}  >
                 <RingProgress

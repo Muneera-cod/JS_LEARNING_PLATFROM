@@ -11,7 +11,7 @@ function LatestAddedQuestions() {
           return <div className='min-h-[40rem] w-full flex items-center justify-center'><Loader color="yellow" type="dots" /></div>
         }
   return (
-    <div className='flex flex-col  px-4  gap-2'>
+    <div className='flex flex-col  px-4 sm:py-10 md:py-8   gap-2'>
       <h3 className='text-[20px] font-[700] text-secondaryClr leading-[50px] tracking-wide'>Challeges recently added</h3>
       { data && data.length ? [...data].splice(0,3).map((challenge)=>{
         return(
