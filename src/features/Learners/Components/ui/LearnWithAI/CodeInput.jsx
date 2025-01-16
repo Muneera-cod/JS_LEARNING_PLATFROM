@@ -12,8 +12,8 @@ function CodeInput({ codeInput , setCodeInput }) {
     height="60vh"
     defaultLanguage="javascript"
      theme={`${isDarkmode ? 'vs-dark' :'vs-light'}`}
-     />
-   </div>
+   />
+</div>
   )
 }
 

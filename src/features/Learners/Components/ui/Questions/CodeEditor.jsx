@@ -118,13 +118,13 @@ function CodeEditor() {
                 <Editor
                     value={code} 
                     onChange={(value) => setCode(value || "")} 
-                    height="75vh"
+                    height="60vh"
                     defaultLanguage="javascript"
                      theme={`${isDarkmode ? 'vs-dark' :'vs-light'}`}
                 />
                  <button 
                  onClick={handleRun} 
-                 className={`w-1/4  mx-4 my-10  bg-secondaryClr  border-2 border-primaryClr text-mainClr p-3 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>
+                 className={`w-1/4  mx-4 my-10  bg-secondaryClr  border-2 border-primaryClr text-mainClr px-3 py-2 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>
                 Run Code
                </button>
 

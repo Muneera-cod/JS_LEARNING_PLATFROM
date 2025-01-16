@@ -22,7 +22,7 @@ function LatestAddedQuestions() {
             <p >{challenge.level}</p>
          </div>) 
          }) : <p>No challenges Added...</p>}
-         <p className='ml-auto px-6 py-2 opacity-60 font-[700] hover:opacity-100' onClick={()=>{navigate('view_questions');dispatch(setView(1))}}>View All</p>
+         <p className='ml-auto px-6 py-2 text-sm opacity-60 font-[700] hover:opacity-100' onClick={()=>{navigate('view_questions');dispatch(setView(1))}}>View All</p>
     </div>
   )
 }
