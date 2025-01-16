@@ -6,7 +6,6 @@ import { Outlet,useLocation } from 'react-router-dom'
 import { setView,setSubView } from '../../../../redux/reducers/View/ViewSlice'
 function Learners() {
   const currview=useSelector((state)=>state.view.curView)
-  const currSubview=useSelector((state)=>state.view.curSubView)
   console.log('currview',currview)
   const location = useLocation()
   const dispatch = useDispatch()

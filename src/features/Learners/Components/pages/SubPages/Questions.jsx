@@ -1,5 +1,5 @@
 import SeachBar from '../../../../../Components/ui/SeachBar'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import {  Loader,Select } from '@mantine/core'
 import { IconMoodEmpty } from '@tabler/icons-react'
 import { useFetchQuestionsQuery } from '../../../../../redux/Api/QuestionApiSlice'
@@ -10,6 +10,9 @@ import { setSubView } from '../../../../../redux/reducers/View/ViewSlice'
 import { useNavigate } from 'react-router-dom'
 import '@mantine/core/styles.css';
 function Questions() {
+  
+  useEffect(()=>{window.scrollTo(0, 0)},[])
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { data , isLoading ,isError} = useFetchQuestionsQuery()

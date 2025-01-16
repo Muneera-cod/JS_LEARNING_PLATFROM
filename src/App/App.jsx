@@ -15,8 +15,7 @@ function App() {
   const [initialized,setInitialized]=useState(false)
   console.log('auth.currentUser',auth.currentUser)
   const { data ,isLoading} = useCheckAuthQuery()
-  console.log('data',data)
-  const authInitialized = useAuthState(); // Use the custom hook to listen for auth state changes
+  const authInitialized = useAuthState(); 
   console.log('data',data)
 
   useEffect(() => {

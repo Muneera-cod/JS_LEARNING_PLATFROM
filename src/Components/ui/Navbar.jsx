@@ -1,12 +1,10 @@
 import { IconBellFilled, IconSettings,IconLogout,IconSun, IconMoonFilled } from '@tabler/icons-react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMode } from '../../redux/reducers/Theme/ThemeSlice'
-import { useNavigate } from 'react-router-dom'
 import { useLogoutMutation } from '../../redux/Api/authApiSlice'
 import logo from '/JSLEARNNEW.webp'
 function Navbar() {
      const dispatch=useDispatch()
-     const navigate=useNavigate()
      const [logout]=useLogoutMutation()
       const darkmode=useSelector((state)=>state.theme.isDarkmode)
   return (

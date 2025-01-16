@@ -40,7 +40,8 @@ export default {
         primaryClr:'rgb(119, 114, 82,0.05)',
         secondaryClr:'#F0DB4F',
         lightSecondaryClr:'#cabb5d',
-        lighterSeocndaryClr:'#cab947'
+        lighterSeocndaryClr:'#cab947',
+        footertextClr:'#848583'
       },
     },
   },

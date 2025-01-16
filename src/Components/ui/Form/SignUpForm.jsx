@@ -84,47 +84,47 @@ useEffect(()=>{
   
   
   return (
-    <div className='flex flex-col border-2 border-primaryClr sm:p-[36px] md:p-[30px] sm:min-w-full md:min-w-[500px]  max-h-[592px] min-h-[592px] rounded-r-md shadow-lg '>
-     <div className='font-bold text-secondaryClr text-2xl font-sans'>SignUp here....</div>
+    <div className='text-lightmodeTextClr dark:text-darkmodeTextClr flex flex-col border-2 border-primaryClr sm:p-[32px] md:p-[36px] sm:min-w-full md:min-w-[500px]  max-h-[550px] min-h-[550px] rounded-r-md shadow-lg '>
+     <div className='font-bold text-secondaryClr sm:text-xl md:text-2xl font-sans'>SignUp here....</div>
    
      <p ref={errorref} className={`${errorMsg?'text-red-800 bg-red-100 opacity-10  flex items-center justify-center mt-4  p-2 rounded-md':'absolute left-[-10000px] top-[-10000px]'}`} aria-live="assertive">{errorMsg}</p>
-      <div className='flex text-textCLr text-darkmodeTextClr  min-h-fit flex-col  sm:py-0 md:py-2 lg:py-4 sm:px-0 md:px-4 lg:px-8 xl:px-10 rounded-lg max-gap-16 items-center justify-center'>
+      <div className='w-full flex text-textCLr text-darkmodeTextClr  min-h-fit flex-col  sm:py-0 md:py-2 lg:py-4 sm:px-0 md:px-4  rounded-lg max-gap-16 items-center justify-center'>
       
-       <form  className='w-full' onSubmit={handleSubmit}>
-         <fieldset className='flex flex-col gap-2 py-2 justify-center'>
+       <form  className='w-full ' onSubmit={handleSubmit}>
+         <fieldset className='flex flex-col gap-2 py-2 justify-center '>
 
            <label htmlFor='name' className='flex flex-col gap-1  text-sm  text-textCLr dark:text-darkmodeTextClr' ref={userRef}>
               Name
              <input onChange={(e)=>setName(e.target.value)}  aria-describedby='namenote' aria-invalid={!validname} aria-label='name' required aria-required='true'
-              placeholder="Enter your name." id="name" value={name} name="name" type='text' className='text-black bg-lightBgclr font-semibold rounded-md border-[3px] border-primaryClr p-3'></input>
+              placeholder="Enter your name." id="name" value={name} name="name" type='text' className='bg-primaryClr font-semibold rounded-md border-[3px] border-primaryClr p-3'></input>
              <p id='namenote' className={`${ name && !validname ?'text-[14px]':'hidden'} text-[14px] text-red-800`} aria-live='polite'>{!USER_REGEX.test(name)?'Name should be atleast 3 characters':''}</p>
            </label>  
            <label htmlFor='email' className='flex flex-col gap-1  text-sm text-textCLr dark:text-darkmodeTextClr'>
               Email
              <input onChange={(e)=>SetEmail(e.target.value)} aria-describedby='emailnote' aria-invalid={!validEmail} aria-label='email' required aria-required='true'
-             placeholder="Enter your email address" id="email" value={email} name="email" type='email' className='text-black bg-lightBgclr font-semibold rounded-md border-[3px] border-primaryClr p-3'></input>
+             placeholder="Enter your email address" id="email" value={email} name="email" type='email' className=' bg-primaryClr font-semibold rounded-md border-[3px] border-primaryClr p-3'></input>
              <p id='emailnote' className={`${ email && !validEmail ?'text-[14px]':'hidden'} text-[14px] text-red-800`} aria-live='polite'>{!EMAIL_REGEX.test(email)?'Email should be valid':''}</p>
            </label>
         
            <label htmlFor='password' className='flex flex-col gap-1  text-sm text-textCLr dark:text-darkmodeTextClr' >
               Password
              <input onChange={(e)=>SetPwd(e.target.value)}  value={pwd} aria-describedby='pwdnote' aria-invalid={!validPwd} aria-label='password' required 
-              placeholder="Enter your password" type='password' id='password' name='password' className='text-black bg-lightBgclr font-semibold rounded-md border-[3px] border-primaryClr p-3'  ></input>
+              placeholder="Enter your password" type='password' id='password' name='password' className=' bg-primaryClr font-semibold rounded-md border-[3px] border-primaryClr p-3'  ></input>
               <p id='pwdnote' className={`${ pwd && !validPwd ?'text-[14px]':'hidden'} text-[14px] text-red-800`} aria-live='polite'>{!PWD_REGEX.test(pwd)?'Password should be atleast 6 characters':''}</p>
            </label>
            <label htmlFor='confirm_pwd' className='flex flex-col gap-1  text-sm text-textCLr dark:text-darkmodeTextClr' >
                Re-Enter Password
                <input onChange={(e)=>setConfirmPwd(e.target.value)} value={confirmPwd} aria-describedby='confirmpwdnote' aria-invalid={!validConfirmPwd} aria-label='confirm_pwd' required aria-required='true'
-               placeholder="Enter your password" type='password' id='confirm_pwd' name='confirm_pwd' className='text-black bg-lightBgclr font-semibold rounded-md border-[3px] border-primaryClr p-3'  ></input>
+               placeholder="Enter your password" type='password' id='confirm_pwd' name='confirm_pwd' className='bg-primaryClr font-semibold rounded-md border-[3px] border-primaryClr p-3'  ></input>
                <p id='confirmpwdnote' className={`${ confirmPwd && !validConfirmPwd ?'text-[14px]':'hidden'} text-[14px] text-red-800`} aria-live='polite'>{confirmPwd!==pwd?'Password does not match':''}</p>
            </label>
          </fieldset>
-         <div className='flex items-center w-full justify-center'> 
-              <button disabled={isLoading} type='submit' className={`bg-secondaryClr  border-2 border-primaryClr text-mainClr p-3 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>{ isLoading ? 'Signing...' : 'SignUp' }</button>
+         <div className='flex items-center w-full justify-center pt-2'> 
+              <button disabled={isLoading} type='submit' className={`bg-secondaryClr  border-2 border-primaryClr text-mainClr px-4 py-[3px] min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>{ isLoading ? 'Signing...' : 'SignUp' }</button>
          </div>
         
        </form>
-       <div className='flex  w-fit justify-center text-mainTextclr dark:text-darkmodeTextClr px-4  py-2 text-[14px] hover:text-[#f8e1b9] sm:inline m-auto'>Already have aaccount?...
+       <div className='flex  w-fit justify-center text-mainTextclr dark:text-darkmodeTextClr p-4  sm:text-[12px] md:text-[14px]  hover:text-[#f8e1b9] sm:inline m-auto'>Already have aaccount?...
           {/* <Link to={'/'}> */}
           <span style={{fontStyle:'italic',display:'inline'}} className='hover:text-[#8b5e0c]' onClick={click}>SignIn</span>
           {/* </Link> */}

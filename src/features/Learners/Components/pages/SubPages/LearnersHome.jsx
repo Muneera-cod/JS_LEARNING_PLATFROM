@@ -10,7 +10,7 @@ import { Loader } from '@mantine/core'
 function LearnersHome() {
    useEffect(()=>{window.scrollTo(0, 0)},[])
   const user = auth.currentUser
-  const { data: progressData, isLoading, isError, isSuccess ,error } = useFetchUserProgressQuery( user.uid )
+  const { data: progressData, isLoading, isError, isSuccess ,error } = useFetchUserProgressQuery( user?.uid )
   const { data: questions ,isLoading: loading , isError:errorIS } = useFetchQuestionsQuery()
   const finduserCompletedQuestions = questions ? [...questions].filter((question)=> progressData?.some((progress) => progress.id === question.id)  ) : []
   isSuccess ? console.log(finduserCompletedQuestions) :null
@@ -24,13 +24,13 @@ function LearnersHome() {
   return (
     <>
     <div className='flex sm:flex-col lg:flex-row w-full'>
-      <div className='basis-1/2 flex flex-col'>
+      <div className='basis-1/2 flex flex-col '>
            <div className='basis-1/4 '>
-                <p className='dark:text-darkmodeTextClr text-lightmodeTextClr font-[700] text-2xl p-14'>Hello....{`${auth.currentUser?.displayName || 'user'}`}...👋</p>
+                <p className='dark:text-darkmodeTextClr text-lightmodeTextClr font-[700] text-2xl p-14'>Hello....{`${ user?.displayName || 'user'}`}...👋</p>
            </div>
            <div className='basis-3/4  p-4'>
                 <h3 className='text-[20px] font-[700] text-secondaryClr leading-[50px] tracking-wide my-2'>Your Progress</h3>
-                <LearnersProgress  id={auth.currentUser.uid}/>
+                <LearnersProgress  id={ user?.uid }/>
             </div>
       </div>
       <div className='basis-1/2  flex flex-col px-4 py-2 gap-2 '>

@@ -6,6 +6,10 @@ function ForgotPasswordForm({setCurrForm}) {
     const [message,SetMessage]=useState('')
     const handleSubmit=async(e)=>{
         e.preventDefault()
+        if(email.trim() === ''){
+          setErrorMsg('Please fill the fields')
+          return
+        }
         try {
             await sendPasswordResetEmail(auth, email)
             SetMessage('Check your email for further instructions')
@@ -16,13 +20,13 @@ function ForgotPasswordForm({setCurrForm}) {
   
   return (
     <>
-    <button onClick={()=>setCurrForm(0)} className='basis-1/6 absolute sm:top-6 md:top-10 sm:left-6 md:left-10  opacity-50 hover:opacity-100 text-lightsecondaryClr dark:text-secondaryClr'>back</button>
+    <button onClick={()=>setCurrForm(0)} className='basis-1/6 absolute sm:top-20 md:top-24 sm:left-6 md:left-10  opacity-50 hover:opacity-100 text-lightsecondaryClr dark:text-secondaryClr'>back</button>
     
-    <div className='flex flex-col sm:basis-full md:basis-3/4 lg:basis-1/2 xl:basis-1/3 justify-center sm:px-0 md:px-2  dark:text-darkmodeTextClr text-textCLr  font-sans'>
+    <div className='flex flex-col sm:basis-full md:basis-3/4 lg:basis-1/2 xl:basis-1/3 justify-center sm:px-0 md:px-2 py-8 dark:text-darkmodeTextClr text-textCLr  font-sans'>
  
     <h2 className='font-bold text-md mx-2'>Forgot Password</h2>
     <form onSubmit={handleSubmit} className='flex  min-h-fit flex-col md:px-2 py-4 rounded-lg gap-4  items-center justify-center'>
-      <input className='bg-lightBgclr font-semibold w-full rounded-md border-[3px] border-markclr text-black p-3 hover:border-markHoverclr'
+      <input className='bg-primaryClr font-semibold w-full rounded-md border-[3px] border-primaryClr text-black p-3 hover:border-markHoverclr'
         type="email"
         placeholder="Enter your email"
         value={email}
