@@ -26,9 +26,9 @@ function LearnWithAI() {
       return
   }
     try { 
-      const result = eval(`${codeInput}`);
-     
-      setOutput(JSON.stringify(result) || "No output returned.");
+      const result = new Function(`return ${codeInput}`)();   
+      console.log(result)   
+      setOutput(JSON.stringify(result()) || "No output returned.");
          
      }
      catch (error) { 
