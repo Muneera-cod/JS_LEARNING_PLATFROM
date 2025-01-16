@@ -9,7 +9,7 @@ function MainPage() {
     <>
     <main className='flex flex-col min-h-screen sm:p-[16px] md:p-[20px] bg-mainClr dark:bg-darkmodeMainClr text-textCLr dark:text-darkmodeTextClr'>
     
-        <div className='flex sm:flex-col md:flex-row  gap-8  min-h-[60vh] p-10'>
+        <div className='flex sm:flex-col md:flex-row  gap-8  min-h-[60vh] sm:pt-24 md:pt-10 sm:px-8 md:px-10'>
             <div className='flex flex-col basis-1/2 gap-10 items-start justify-center md:px-10'>
                 <p className='sm:text-[21px] md:text-[24px] lg:text-[28px] font-[700] opacity-60 '>Start coding journey...</p>
                 <p className='sm:text-[14px] md:text-[15px] font-[400] opacity-60 text-justify'>Ready to master JavaScript? Explore interactive lessons, tackle coding challenges, and track your progress—all in one place. Let's turn your coding goals into reality!</p>
