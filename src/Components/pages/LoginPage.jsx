@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { IconMoonFilled,IconSun } from '@tabler/icons-react'
 import MainPage from '../ui/LoginPage/MainPage'
 import { setView } from '../../redux/reducers/View/ViewSlice'
+import { IconArrowLeft } from '@tabler/icons-react'
 function LoginPage() {
       const [currform,setCurrForm]=useState(0)
       const darkmode=useSelector((state)=>state.theme.isDarkmode)
@@ -28,17 +29,18 @@ function LoginPage() {
    {
     view === 0 && <MainPage/>
    }
-    { view === 1 && <> <button onClick={()=>dispatch(setView(0))} className='basis-1/6 absolute sm:top-20 md:top-24 sm:left-6 md:left-10  opacity-50 hover:opacity-100 text-lightsecondaryClr '>back</button>
+    { view === 1 && <section className='flex items-center justify-center pt-6'> 
+      <IconArrowLeft onClick={()=>dispatch(setView(0))} className='basis-1/6 absolute sm:top-24 md:top-24 sm:left-6 md:left-10  opacity-50 hover:opacity-100 text-lightsecondaryClr '>back</IconArrowLeft>
 
      
-     <div className=' flex bg-mainClr dark:bg-darkmodeMainClr  items-center justify-center flex-row sm:px-6 md:px-14 lg:px-16 xl:px-18 sm:py-10 md:py-14 lg:py-16 '>
+     <div className='w-full h-full flex bg-mainClr dark:bg-darkmodeMainClr  items-center justify-center flex-row sm:px-6 md:px-14 lg:px-16 xl:px-18 sm:py-10 md:py-14 lg:py-16 '>
       
         {currform===0 && <div className='flex w-full items-center justify-center'><LoginForm  currform={currform} setCurrForm={setCurrForm} />
         <FormBanner borderRadius={'r'}/></div>}
         
         {currform===1 && <div className='flex w-full items-center justify-center'><FormBanner  borderRadius={'l'}/><SignUpForm setCurrForm={setCurrForm}/></div>}
         { currform===2 && <div className='flex w-full items-center justify-center '><ForgotPasswordForm  currform={currform} setCurrForm={setCurrForm} /></div>}
-    </div></>
+    </div></section>
     }
     </>
   )
