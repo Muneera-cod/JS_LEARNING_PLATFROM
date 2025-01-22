@@ -23,6 +23,62 @@ html.dark {
     @apply transition-colors duration-100;
 
 }
+.gradient{
+  background-image: linear-gradient(360deg, rgba(223, 134, 9, 0.1), rgb(119, 114, 82,0.05))
+}
+.gradienttopbottom{
+  background-image: linear-gradient(to top,rgb(202, 187, 93 ,0.1),transparent)
+
+}
+/* Ensure the carousel container has enough space for the dots */
+.react-multi-carousel-list {
+  padding-bottom: 40px; /* Adds space for the dots below the carousel */
+}
+
+/* Customize dot container */
+.react-multi-carousel-dot-list {
+  position: relative; /* Position it relatively to the parent */
+  bottom: 0; /* Ensures the dots are at the bottom of the carousel */
+  margin-top: 20px; /* Add some margin if needed */
+  text-align: center; /* Center the dots horizontally */
+}
+
+/* Styling the dots */
+.react-multi-carousel-dot button {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  border: none;
+  margin: 0 5px;
+}
+
+/* Active dot styling */
+.react-multi-carousel-dot--active button {
+  background-color: #000; /* Active dot color */
+}
+.typing-container {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  /* border-right: 3px solid rgb(0, 0, 0);  */
+  animation: typing 3s steps(10, end), blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
 /* body{
     background: #323330;
 } */
@@ -43,3 +99,142 @@ html.dark {
     box-shadow: 10px 10px 200px 200px  linear-gradient(90deg,rgba(0,0,0),rgba(186, 184, 177, 0.5))  ;
 } */
 
+
+@keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+
+  .slide-in-left {
+    animation: slideInLeft 1s ease-out forwards;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 1s ease-out forwards;
+  }
+
+
+  @keyframes slideInTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-top {
+    animation: slideInTop 1s ease-out forwards;
+}
+
+.slide-in-bottom {
+    animation: slideInBottom 1s ease-out forwards;
+}
+
+.shake-button {
+    /* padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; */
+    animation: alternating-shake 0.6s ease-in-out ;
+}
+.shake-button:hover {
+    animation: alternating-shake 0.6s ease-in-out infinite;
+  }
+  @keyframes alternating-shake {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+  }
+
+
+
+  
+  /* .start-button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(202,187, 93);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(	132, 133, 131, 0.8), 0 0 40px rgba(202, 187, 93, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .start-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(132, 133, 131, 1), 0 0 60px rgba(202, 187, 93, 0.8);
+  }
+  
+  .start-button:focus {
+    outline: none;
+  } */
+  
+  /* .visual-container {
+    height: 300px; 
+    margin: 20px 0;
+    
+  }
+  
+  .hero::after {
+    content: '';
+    font-size: 3rem;
+    bottom: 0;
+    position: absolute;
+    animation: arrow-bounce 1s infinite;
+  }
+  
+  @keyframes arrow-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  } */

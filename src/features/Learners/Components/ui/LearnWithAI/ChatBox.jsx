@@ -42,7 +42,7 @@ function ChatBox({ setAiChatBox }) {
   
   return (
   
-    <div className={`absolute overflow-auto top-0 right-0 z-30 flex flex-col justify-between sm:min-w-full  md:min-w-[600px] gap-6 lg:min-w-[720px] border-2 border-primaryClr  p-4 shadow-2xl min-h-screen ${!isDarkmode ? 'bg-mainClr text-textCLr' : 'bg-darkmodeMainClr text-[rgb(255,255,255,0.8)]'}`}>
+    <div className={`fixed overflow-auto top-0 right-0 bottom-0 z-30 flex flex-col justify-between sm:min-w-full  md:min-w-[600px] gap-6 lg:min-w-[720px] border-2 border-primaryClr  p-4 shadow-2xl min-h-screen ${!isDarkmode ? 'bg-mainClr text-textCLr' : 'bg-darkmodeMainClr text-[rgb(255,255,255,0.8)]'}`}>
        <IconX onClick={()=>setAiChatBox(false)} className="dark:text-white mr-auto"/>
 
             

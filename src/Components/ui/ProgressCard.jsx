@@ -24,7 +24,7 @@ function ProgressCard({ title, progress, count, bgColor, value , buttonText ,nav
     {value === 100 &&  <div className="flex gap-4 items-center text-md tracking-widest font-[700] "> <IconTrophyFilled size={60} className='border-b-[0.5px] border-primaryClr' color='yellow'/>Congradulations...you finished All....</div>}
     {/* <Progress  color='blue' className='' /> */}
     {/* </div> */}
-    {buttonText && value !== 0 && value !== 100 &&  <button onClick={handleNavigation} type='submit' className={`ml-auto w-1/4  bg-secondaryClr  border-2 border-primaryClr text-mainClr px-3 py-2  min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>{buttonText}</button>  }
+    {buttonText && value !== 0 && value !== 100 &&  <button onClick={handleNavigation} type='submit' className={`ml-auto w-1/4  bg-secondaryClr  border-2 border-primaryClr hover:text-mainClr text-textCLr px-4 py-2 min-w-fit rounded-lg  font-bold hover:bg-lighterSeocndaryClr  hover:border-secondaryClr   `}>{buttonText}</button>  }
   </div>
   )
 }

@@ -11,6 +11,7 @@ import { createPortal } from "react-dom";
 import PassedPopUp from "./PassedPopUp";
 import { useStoreUserProgressMutation } from "../../../../../redux/Api/UserProgressApiSlice";
 import { auth } from "../../../../../utils/config/firebaseConfig";
+import { IconPlayerPlayFilled } from "@tabler/icons-react";
 function CodeEditor() {
     const isDarkmode=useSelector((state)=>state.theme.isDarkmode)
     const { question_id } = useParams()
@@ -101,7 +102,7 @@ function CodeEditor() {
     }
     return (
         <>
-    <div className="flex sm:flex-col lg:flex-row gap-4 bg-primaryClr p-6 -m-6">
+    <div className="flex sm:flex-col xl:flex-row gap-4 bg-primaryClr p-6 -m-6">
         {/* Left Section */}
         <div className="flex-1 basis-1/2 ">
             <ViewQuestion 
@@ -124,8 +125,8 @@ function CodeEditor() {
                 />
                  <button 
                  onClick={handleRun} 
-                 className={`w-1/4  mx-4 my-10  bg-secondaryClr  border-2 border-primaryClr text-mainClr px-3 py-2 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>
-                Run Code
+                 className={` flex text-[15px] items-center justify-center gap-2 mx-1  my-4  bg-secondaryClr  border-2 border-primaryClr text-darkmodeMainClr hover:text-mainClr px-4 py-2 min-w-fit rounded-lg  font-bold hover:bg-lightSecondaryClr  hover:border-secondaryClr  `}>
+                <IconPlayerPlayFilled className="w-4 h-4"/> Run Code
                </button>
 
             <div  className="bg-primaryClr p-4 rounded-md">

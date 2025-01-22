@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     screens: {
-      'sm': '340px',
+      'sm': '300px',
       // => @media (min-width: 640px) { ... }
 
       'md': '840px',
@@ -35,7 +35,7 @@ export default {
         darkmodeMainClr:'#282828',
         textCLr:'#323330',
         lightmodeTextClr:'#000',
-        darkmodeTextClr:'#ffff',
+        darkmodeTextClr:'#f5f5f5',
         textCLr:'#323330',
         primaryClr:'rgb(119, 114, 82,0.05)',
         secondaryClr:'#F0DB4F',

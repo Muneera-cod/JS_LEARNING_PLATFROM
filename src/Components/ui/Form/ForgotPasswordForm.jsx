@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { sendPasswordResetEmail } from 'firebase/auth'
 import { auth } from '../../../utils/config/firebaseConfig'
+import { IconArrowLeft } from '@tabler/icons-react'
 function ForgotPasswordForm({setCurrForm}) {
     const [email,setEmail]=useState('')
     const [message,SetMessage]=useState('')
@@ -20,7 +21,7 @@ function ForgotPasswordForm({setCurrForm}) {
   
   return (
     <>
-    <button onClick={()=>setCurrForm(0)} className='basis-1/6 absolute sm:top-20 md:top-24 sm:left-6 md:left-10  opacity-50 hover:opacity-100 text-lightsecondaryClr dark:text-secondaryClr'>back</button>
+    <IconArrowLeft onClick={()=>setCurrForm(0)} className='basis-1/6 absolute sm:top-20 md:top-24 sm:left-6 md:left-10  opacity-50 hover:opacity-100 text-lightsecondaryClr dark:text-secondaryClr'></IconArrowLeft>
     
     <div className='flex flex-col sm:basis-full md:basis-3/4 lg:basis-1/2 xl:basis-1/3 justify-center sm:px-0 md:px-2 py-8 dark:text-darkmodeTextClr text-textCLr  font-sans'>
  

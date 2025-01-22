@@ -85,7 +85,7 @@ useEffect(()=>{
   
   return (
     <div className='text-lightmodeTextClr dark:text-darkmodeTextClr flex flex-col border-2 border-primaryClr sm:p-[32px] md:p-[36px] sm:min-w-full md:min-w-[500px]  max-h-[550px] min-h-[550px] rounded-r-md shadow-lg '>
-     <div className='font-bold text-secondaryClr sm:text-xl md:text-2xl font-sans'>SignUp here....</div>
+     <div className='font-bold text-darkmodeMainClr dark:text-secondaryClr  sm:text-md md:text-xl font-sans  sm:px-0 md:px-4 '>SignUp here....</div>
    
      <p ref={errorref} className={`${errorMsg?'text-red-800 bg-red-100 opacity-10  flex items-center justify-center mt-4  p-2 rounded-md':'absolute left-[-10000px] top-[-10000px]'}`} aria-live="assertive">{errorMsg}</p>
       <div className='w-full flex text-textCLr text-darkmodeTextClr  min-h-fit flex-col  sm:py-0 md:py-2 lg:py-4 sm:px-0 md:px-4  rounded-lg max-gap-16 items-center justify-center'>
@@ -120,13 +120,13 @@ useEffect(()=>{
            </label>
          </fieldset>
          <div className='flex items-center w-full justify-center pt-2'> 
-              <button disabled={isLoading} type='submit' className={`bg-secondaryClr  border-2 border-primaryClr text-mainClr px-4 py-[3px] min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>{ isLoading ? 'Signing...' : 'SignUp' }</button>
+              <button disabled={isLoading} type='submit' className={`bg-secondaryClr  border-2 border-primaryClr  px-4 py-[3px] min-w-fit rounded-lg  font-mono font-bold hover:bg-lighterSeocndaryClr  hover:text-mainClr  hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>{ isLoading ? 'Signing...' : 'SignUp' }</button>
          </div>
         
        </form>
        <div className='flex  w-fit justify-center text-mainTextclr dark:text-darkmodeTextClr p-4  sm:text-[12px] md:text-[14px]  hover:text-[#f8e1b9] sm:inline m-auto'>Already have aaccount?...
           {/* <Link to={'/'}> */}
-          <span style={{fontStyle:'italic',display:'inline'}} className='hover:text-[#8b5e0c]' onClick={click}>SignIn</span>
+          <span style={{fontStyle:'italic',display:'inline'}} className='hover:text-[#8b5e0c] cursor-pointer' onClick={click} >SignIn</span>
           {/* </Link> */}
        </div>
     </div>

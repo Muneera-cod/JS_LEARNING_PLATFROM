@@ -8,7 +8,6 @@ import { createPortal } from 'react-dom'
 import UpdateProfile from '../../../../../Components/ui/Form/UpdateProfile'
 function Profile() {
   const [popUp, setPopUp] = useState(false)
-  console.log('in my manage learner',auth.currentUser,auth.currentUser.emailVerified)
 
   return (
     <>

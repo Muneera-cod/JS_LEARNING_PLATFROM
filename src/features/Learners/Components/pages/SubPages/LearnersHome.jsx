@@ -23,18 +23,17 @@ function LearnersHome() {
       }
   return (
     <>
-    <div className='flex sm:flex-col lg:flex-row w-full sm:gap-6 md:gap-2'>
+    <div className='flex sm:flex-col lg:flex-row w-full sm:gap-12 md:gap-2'>
       <div className='basis-1/2 flex flex-col '>
-           <div className='basis-1/4 '>
-                <p className='dark:text-darkmodeTextClr text-lightmodeTextClr font-[700] text-2xl p-14'>Hello....{`${ user?.displayName || 'user'}`}...👋</p>
+           <div className='basis-1/3 flex items-center justify-start sm:px-4 md:px-8 sm:py-20 lg:py-0  '>
+                <p className='dark:text-darkmodeTextClr text-lightmodeTextClr font-[700] sm:text-2xl lg:text-3xl typing-container tracking-widest opacity-80'>Hello...{`${ user?.displayName || 'user'}`}....👋</p>
            </div>
-           <div className='basis-3/4  p-4'>
-                <h3 className='text-[20px] font-[700] text-secondaryClr leading-[50px] tracking-wide my-2'>Your Progress</h3>
+           <div className='basis-2/3  md:px-4 justify-end flex flex-col '>
+                <h3 className='text-[20px] font-[700] text-lightmodeTextClr dark:text-secondaryClr leading-[50px] tracking-wide my-2'>Your Progress</h3>
                 <LearnersProgress  id={ user?.uid }/>
             </div>
       </div>
-      <div className='basis-1/2  flex flex-col px-4 py-2 gap-2 '>
-      {/* <button  type='submit' className={`w-1/4 ml-auto mx-4 mb-10 bg-secondaryClr  border-2 border-primaryClr text-mainClr p-3 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>Learn With AI</button> */}
+      <div className='basis-1/2  flex flex-col justify-end md:px-4 pt-4 gap-10'>
       
       
           <ProgressCard title={'Continue your learning'} buttonText={'Continue'} value={ finduserCompletedQuestions?.length / questions?.length * 100 } navigation={'view_questions'}/>

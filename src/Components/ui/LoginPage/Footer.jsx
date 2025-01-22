@@ -21,7 +21,8 @@ function Footer() {
      </div>
    </div>
    </div>
- <p className="text-sm font-semibold px-2">© {new Date().getFullYear()} Master .js</p>
+   <hr className=' opacity-40'></hr>
+ <p className="text-xs font-semibold p-[4px]">© {new Date().getFullYear()} Master .js. All Rights Reserved.</p>
 
  </footer>
   )

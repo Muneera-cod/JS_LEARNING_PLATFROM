@@ -2,11 +2,13 @@ import CodeInput from '../../ui/LearnWithAI/CodeInput'
 import CodeOuput from '../../ui/LearnWithAI/CodeOuput'
 import { useState,useEffect } from 'react'
 import { notifications } from '@mantine/notifications'
+import { IconArrowLeft,IconPlayerPlayFilled } from '@tabler/icons-react'
+import { useNavigate } from 'react-router-dom'
 import '@mantine/notifications/styles.css';
 import ChatBox from '../../ui/LearnWithAI/ChatBox';
 import { createPortal } from 'react-dom';
 function LearnWithAI() {
-  
+  const navigate = useNavigate()
   useEffect(()=>{window.scrollTo(0, 0)},[])
 
   const [ aiChatBox,setAiChatBox ] = useState(false)
@@ -56,18 +58,20 @@ function LearnWithAI() {
   console.log(codeInput)
   console.log(output)
   return (
-   
-    <div className='grid lg:grid-cols-2 gap-8 pb-6 pt-20 px-4 sm:h-[1000px] lg:h-[700px] '>
-      <button onClick={()=>setAiChatBox(true)} className={` dark:bg-secondaryClr dark:bg-opacity-20  border-2 border-primaryClr text-zinc-400  dark:text-white py-2 px-6 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  absolute top-8 right-10 `}>Ask AI</button>
-        <div className='dark:bg-[#1e1e1e] bg-white flex items-center flex-col basis-1/2 border-2 border-primaryClr rounded-md p-4  shadow-sm min-h-full overflow-hidden'>
-            {/* <p className='sm:text-sm md:text-md font-[700] text-lg opacity-60'>Code Input</p> */}
+   <>
+  <IconArrowLeft className="opacity-50 hover:opacity-100 text-lightsecondaryClr" onClick={()=>navigate('/')}/>
+
+    <div className='grid lg:grid-cols-2 gap-8 py-6 md:px-4 md:min-h-full '>
+      <button onClick={()=>setAiChatBox(true)} className={`bg-secondaryClr bg-opacity-20  border-2 border-primaryClr text-zinc-600  dark:text-white py-2 px-6 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr shadow-md fixed bottom-8 right-12 `}>Ask AI</button>
+        <div className='dark:bg-[#1e1e1e] bg-white flex shadow-md flex-col basis-1/2 border-2 border-primaryClr rounded-md  py-4  shadow-sm sm:min-h-[400px] lg:min-h-full overflow-hidden'>
+            <p className='sm:text-sm md:text-md font-[700] text-lg opacity-60 px-3 pb-3 shadow-md  uppercase text-black dark:text-white'>javascript Code Editor</p>
             <CodeInput codeInput={codeInput} setCodeInput={setCodeInput}/>
             <button onClick={handleCodeRun} 
-             className={`w-1/4  bg-secondaryClr  border-2 border-primaryClr text-mainClr p-2 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>
-               Run</button>
+             className={`flex gap-2 items-center justify-center ml-auto mr-2 bg-secondaryClr text-textCLr px-6 py-1 min-w-fit rounded-lg  font-bold hover:bg-lightSecondaryClr hover:text-mainClr hover:border-secondaryClr  `}>
+               <IconPlayerPlayFilled className='w-4 h-4'/> Run</button>
         </div>
        
-        <div className=' flex items-center flex-col basis-1/2 border-2 border-primaryClr rounded-md p-4 shadow-sm h-full'>
+        <div className=' flex items-center shadow-md flex-col basis-1/2 border-2 border-primaryClr rounded-md p-4 shadow-sm sm:min-h-[200px] lg:min- h-full'>
             <p className='sm:text-sm md:text-md font-[700] text-lg opacity-60'>Output</p>
             <CodeOuput  output={output}/>
         </div>
@@ -75,7 +79,7 @@ function LearnWithAI() {
         { aiChatBox && createPortal(<ChatBox setAiChatBox={setAiChatBox}/>,document.body)}
 
     </div>
-        
+      </>  
   
   )
 }

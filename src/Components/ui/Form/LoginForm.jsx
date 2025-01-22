@@ -41,7 +41,7 @@ console.log('errorMsg',errorMsg)
  
   return (
     <div className=' text-lightmodeTextClr dark:text-darkmodeTextClr flex flex-col border-2 border-primaryClr sm:p-[32px] md:p-[36px] sm:min-w-full  md:min-w-[500px]  max-h-[550px] min-h-[550px] rounded-l-md shadow-lg '>
-      <h3 className='font-bold text-secondaryClr sm:text-xl md:text-2xl font-sans'>Login here....</h3>
+      <h3 className='font-bold text-darkmodeMainClr dark:text-secondaryClr sm:text-md md:text-xl font-sans sm:p-0 md:p-2 lg:p-4'>Login here....</h3>
      <p ref={errorref} className={`${errorMsg ? 'text-red-800 bg-red-100  flex items-center justify-center mt-4 p-3 rounded-md':'hidden'}`} aria-live="assertive">{  errorMsg }</p>
       <div className='flex text-textCLr  min-h-fit flex-col sm:p-0 md:p-2 lg:p-4 rounded-lg gap-10 items-center justify-center'>
         
@@ -61,19 +61,19 @@ console.log('errorMsg',errorMsg)
           </label>
         </fieldset>
         <div className='flex items-center w-full justify-center'> 
-          <button disabled={isLoading} className={`bg-secondaryClr  border-2 border-primaryClr text-mainClr px-4 py-2 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>{ isLoading ? 'Logging...' :'Login'}</button>
+          <button disabled={isLoading} className={`bg-secondaryClr  border-2 border-primaryClr hover:text-mainClr px-4 py-2 min-w-fit rounded-lg  font-mono font-bold hover:bg-lighterSeocndaryClr  hover:border-secondaryClr ${!isLoading ?'':'opacity-30'} `}>{ isLoading ? 'Logging...' :'Login'}</button>
         </div>
           
         </form>
         <div className='flex flex-col gap-4 items-center'>
-        <p onClick={()=>setCurrForm(2)} className=' text-mainTextclr dark:text-darkmodeTextClr  dark:hover:text-[#f8e1b9]  sm:text-[13px] md:text-[14px] hover:text-[#f8e1b9] sm:inline'>
+        <p onClick={()=>setCurrForm(2)} className='cursor-pointer text-mainTextclr dark:text-darkmodeTextClr  dark:hover:text-[#f8e1b9]  sm:text-[13px] md:text-[14px] hover:text-[#f8e1b9] sm:inline'>
           Forgot password...?
            
             </p>
         <p className='  w-fit  text-mainTextclr dark:text-darkmodeTextClr  dark:hover:text-[#f8e1b9]  sm:text-[13px] md:text-[14px]  hover:text-[#f8e1b9] sm:inline'>
           Not joined to learn javaScript?...
             {/* <Link to={'/'}> */}
-            <span style={{fontStyle:'italic',display:'inline'}} className='hover:text-[#8b5e0c]' onClick={click} >SignUp</span>
+            <span style={{fontStyle:'italic',display:'inline'}} className='hover:text-[#8b5e0c] cursor-pointer' onClick={click} >SignUp</span>
             {/* </Link> */}
             </p>
           </div>  

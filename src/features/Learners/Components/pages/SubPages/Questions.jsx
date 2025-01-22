@@ -1,7 +1,7 @@
 import SeachBar from '../../../../../Components/ui/SeachBar'
 import { useState,useEffect } from 'react'
 import {  Loader,Select } from '@mantine/core'
-import { IconMoodEmpty } from '@tabler/icons-react'
+import { IconMoodEmpty,IconArrowLeft } from '@tabler/icons-react'
 import { useFetchQuestionsQuery } from '../../../../../redux/Api/QuestionApiSlice'
 import QuestionContainerLearner from '../../ui/Questions/QuestionContainerLearner'
 import { Outlet } from 'react-router-dom'
@@ -44,14 +44,16 @@ function Questions() {
     <>
     { subview === 0 &&
       <>
+      <IconArrowLeft className="opacity-50 hover:opacity-100 text-lightsecondaryClr" onClick={()=>navigate('/')}/>
+
       <div className='flex justify-between items-center'>
         <SeachBar searchValue={searchValue} onChangeFunction={handleSearchChange} text={'by Title'}/>
          <button onClick={()=>{dispatch(setSubView(0));
-                 navigate('/learn')}} className={`mx-2 my-6 bg-secondaryClr  border-2 border-primaryClr text-mainClr px-3 py-[6px] min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr  `}>Learn with AI</button>
+                 navigate('/learn')}} className={`mx-2 my-6 bg-secondaryClr text-[15px] tracking-wide border-2 border-primaryClr text-darkmodeMainClr hover:text-mainClr px-4 py-[6px] min-w-fit rounded-lg  font-bold hover:bg-lightSecondaryClr   hover:border-secondaryClr  `}>Learn with AI</button>
       </div>
       
 
-      <div className='flex flex-col gap-[0.5rem] ' >
+      <div className='flex flex-col gap-[0.6rem]' >
         <div className='flex justify-between items-center'>
             <Select className='self-right w-1/6 my-4 min-w-fit bg-red-200'   
               checkIconPosition="right"

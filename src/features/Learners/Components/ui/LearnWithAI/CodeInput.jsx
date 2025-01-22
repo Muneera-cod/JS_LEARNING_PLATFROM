@@ -9,7 +9,7 @@ function CodeInput({ codeInput , setCodeInput }) {
     <Editor
     value={codeInput} 
     onChange={(value) => setCodeInput(value || "")} 
-    height="60vh"
+    height="90%"
     defaultLanguage="javascript"
      theme={`${isDarkmode ? 'vs-dark' :'vs-light'}`}
    />
