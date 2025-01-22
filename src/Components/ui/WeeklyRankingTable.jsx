@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useFetchUserProgressQuery } from "../../redux/Api/UserProgressApiSlice"
 import { Loader } from "@mantine/core"
-function WeeklyRankingTable({ learner , rankMap , setRankMap ,rank}) {
+function WeeklyRankingTable({ learner , rankMap , setRankMap ,rank , index}) {
     const { data: userprogress , 
             isError: userprogressError , 
            isLoading: userprogressLoading  ,error } = useFetchUserProgressQuery(learner.id)
@@ -26,11 +26,11 @@ function WeeklyRankingTable({ learner , rankMap , setRankMap ,rank}) {
           }
   return (
    <>
-        <div className="text-center py-3 px-4 border-[0.1px] border-primaryClr ">{rank}</div>
+        { index < 5 && <> <div className="text-center py-3 px-4 border-[0.1px] border-primaryClr ">{rank}</div>
 
      <div className="text-center py-3 px-4 border-[0.1px] border-primaryClr break-normal whitespace-normal">{learner?.displayName} </div>
 
-     <div className="text-center py-3 px-4 border-[0.1px] border-primaryClr ">{userprogress?.length}</div>
+     <div className="text-center py-3 px-4 border-[0.1px] border-primaryClr ">{userprogress?.length}</div></>}
    </>
  
        

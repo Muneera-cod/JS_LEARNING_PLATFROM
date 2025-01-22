@@ -41,7 +41,7 @@ let lastScore = null;
         }
         lastScore = points;
      return(
-    index < 5 && <WeeklyRankingTable  rankMap={rankMap} setRankMap={setRankMap}  rank={currentRank}  learner={learner} key={learner.id}/>
+     <WeeklyRankingTable  rankMap={rankMap} setRankMap={setRankMap} index={index} rank={currentRank}  learner={learner} key={learner.id}/>
 
 )})}
     
