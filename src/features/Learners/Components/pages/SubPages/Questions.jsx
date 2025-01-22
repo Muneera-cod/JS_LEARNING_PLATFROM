@@ -67,7 +67,7 @@ function Questions() {
       
         
          {isError && <div className='min-h-[32rem] flex items-center justify-center gap-2'><p className='text-red-200'>An error occured</p><IconMoodEmpty className='w-[20px] h-[20px]'/></div>}
-         {filteredData && filteredData.length ? ([...filteredData].sort((a,b)=> a.order - b.order ).map((x)=><QuestionContainerLearner  key={x.id}  id={x.id}  question={x.title} level={x.level} category={x.category}  setSolvedArray={setSolvedArray} />)):<div className='min-h-[32rem] flex items-center justify-center gap-2'><p>No {`${selectedLevel ? selectedLevel : ''}`} Challenges added</p><IconMoodEmpty className='w-[20px] h-[20px]'/></div>}
+         {filteredData && filteredData.length ? ([...filteredData].sort((a,b)=> a.order - b.order ).map((x)=><QuestionContainerLearner  key={x.id}  id={x.id}  question={x.title} level={x.level} category={x.category}  setSolvedArray={setSolvedArray} />)):<div className='min-h-[32rem] flex items-center justify-center gap-2'><p>No {`${selectedLevel ? selectedLevel : ''}`} Challenges Found</p><IconMoodEmpty className='w-[20px] h-[20px]'/></div>}
        </div>
        </> }
     { subview === 1 && <Outlet/> }

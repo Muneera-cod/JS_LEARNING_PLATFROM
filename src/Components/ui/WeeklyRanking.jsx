@@ -34,14 +34,14 @@ let lastScore = null;
           <div className="gradient py-3 sm:px-3 md:px-4 border-b-[0.1px] border-primaryClr text-left flex gap-2 items-center justify-center ">Earned <IconStarFilled className='min-w-4 min-h-4' color="yellow"/></div>
        
    
-    {sortedLearners.slice(0,5).map((learner,index)=>{
+    {sortedLearners.map((learner,index)=>{
         const points = rankMap.get(learner.id) || 0;
         if (points !== lastScore) {
           currentRank = index + 1;
         }
         lastScore = points;
      return(
-    <WeeklyRankingTable  rankMap={rankMap} setRankMap={setRankMap}  rank={currentRank}  learner={learner} key={learner.id}/>
+    index < 5 && <WeeklyRankingTable  rankMap={rankMap} setRankMap={setRankMap}  rank={currentRank}  learner={learner} key={learner.id}/>
 
 )})}
     

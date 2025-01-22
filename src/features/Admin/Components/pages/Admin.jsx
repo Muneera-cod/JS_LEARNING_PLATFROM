@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 import { setSubView, setView } from '../../../../redux/reducers/View/ViewSlice'
 import { useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
-
 function Admin() {
    const dispatch=useDispatch()
     const location=useLocation()
