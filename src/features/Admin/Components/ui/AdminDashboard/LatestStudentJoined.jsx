@@ -14,15 +14,15 @@ function LatestStudentJoined() {
   return (
     <div className='flex flex-col gap-[1rem]'>
     <h3 className='text-[24px] font-[700] text-secondaryClr leading-[50px] tracking-wide'>Recently joined</h3>
-    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[1rem] overflow-hidden'>
+    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[1rem]'>
      
         {[...data].splice(0,4).map((learner)=>{
             return(
-            <div key={learner.id} className='flex flex-col shadow-lg bg-primaryClr px-10 py-8  gap-[1rem] scaleLarge '>
-               <p className='text-[20px] font-[700]'>{learner.displayName}</p>
+            <div key={learner.id} className='flex flex-col shadow-lg items-center justify-center border-primaryClr border-2 px-10 py-8  gap-[1rem] scaleLarge'>
+               <p className=' border-primaryClr w-fit px-4 border-b-2  text-[20px] font-[700] '>{learner.displayName}</p>
                {console.log(learner.createdAt)}
 
-                <p className='text-[16px] opacity-30'>{learner.email}</p>
+                <p className='text-center text-[16px] opacity-30'>{learner.email}</p>
             </div>
             
     )})}  

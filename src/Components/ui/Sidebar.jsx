@@ -17,7 +17,7 @@ function Sidebar({Data}) {
      <div className='flex sm:flex-row md:flex-col   md:py-40  w-full'>
        {Data.map((x,index)=>{
          return(
-       <div onClick={()=>{handleNavigation(x.link,index)}} key={x.id} className='flex  sm:flex-col md:flex-row md:gap-[1rem] items-center flex-1 hover:bg-textCLr hover:bg-opacity-20 sm:px-2 md:px-6 sm:pt-3 md:py-4'>
+       <div onClick={()=>{handleNavigation(x.link,index)}} key={x.id} className='flex  sm:flex-col md:flex-row md:gap-[1rem] items-center flex-1 hover:bg-textCLr hover:bg-opacity-20 sm:px-2 md:px-6 sm:py-2 md:py-4'>
        {x.icon}
        {open && <p className='sm:hidden md:block pr-6'>{x.title}</p>}
        {!open && <p className='text-xs md:hidden'>{x.title}</p>}

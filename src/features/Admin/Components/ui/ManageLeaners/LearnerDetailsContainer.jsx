@@ -3,7 +3,7 @@ import { useFetchLearnersQuery } from '../../../../../redux/Api/LearnerApiSlice'
 import { Loader } from '@mantine/core'
 import { useFetchQuestionsQuery } from '../../../../../redux/Api/QuestionApiSlice'
 import LearnerCard from './LearnerCard'
-function LearnerDetailsContainer() {
+function LearnerDetailsContainer({ searchValue }) {
   const { data: learners, isLoading: learnersLoading ,isError: learnerError } = useFetchLearnersQuery()
   const { data:questions , isLoading:loading , isError: questionError} = useFetchQuestionsQuery()
   
@@ -15,7 +15,7 @@ function LearnerDetailsContainer() {
   }
   return (
     <>
-    { learners?.map((learner,index)=>{
+    { [...learners].filter((learner)=> learner.displayName.toLowerCase().includes(searchValue.toLowerCase()) || learner.email.toLowerCase().includes(searchValue.toLowerCase()))?.map((learner,index)=>{
       return(
       <LearnerCard key={learner.id} questions={questions}  learner={learner} index={index}/>
 )})}

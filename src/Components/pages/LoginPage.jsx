@@ -21,8 +21,11 @@ function LoginPage() {
       <header className='px-8 py-6 h-[70px]  border-[0.5px] border-primaryClr bg-mainClr dark:bg-darkmodeMainClr flex justify-between  gap-6 items-center sticky top-0  z-10 text-textCLr dark:text-darkmodeTextClr '>
        <div className='flex items-center gap-2 '><img className='max-w-12 max-h-8' src={logo}/><p className='uppercase sm:text-[12px] md:text-md font-[700]'>MAster .JS</p></div>
     <div className='flex gap-[1.5rem] items-center px-2'>
+      {/* <p className='font-[700] text-[16px] hover:opacity-70 cursor-pointer'>About</p>
+      <p className='font-[700] text-[16px] hover:opacity-70 cursor cursor-pointer'>Contact</p> */}
+  
      {!darkmode?<IconSun onClick={()=>dispatch(toggleMode())} title='lightmode' className='sm:w-[21px] md:w-[25px] sm:w-[21px] md:h-[25px]'/>:<IconMoonFilled className='sm:w-[21px] md:w-[25px] sm:w-[21px] md:h-[25px]' onClick={()=>dispatch(toggleMode())} title='darkmode'/>}
-     { view === 0 && <button onClick={()=>dispatch(setView(1))} className='sm:hidden text-sm md:flex text-mainClr dark:bg-[rgb(240,219,79)] px-6 py-3 bg-[#404040] shadow-sm font-[700] rounded-full  dark:hover:bg-lighterSeocndaryClr hover:bg-[rgb(240,219,79)]'>SignUp / LogIn</button>}
+     { view === 0 && <button onClick={()=>dispatch(setView(1))} className='sm:hidden text-sm md:flex text-mainClr dark:bg-[rgb(240,219,79)] px-6 py-[0.65rem] bg-[#404040] shadow-sm font-[700] rounded-full  dark:hover:bg-lighterSeocndaryClr hover:bg-[rgb(240,219,79)]'>SignUp / LogIn</button>}
     </div>
    
  </header>

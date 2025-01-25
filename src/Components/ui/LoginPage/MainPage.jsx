@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { setView } from '../../../redux/reducers/View/ViewSlice'
 import { lazy } from 'react'
 import Carosall from './MainPageParts/Carosall'
+import Contactus from './MainPageParts/Contactus'
 function MainPage() {
     const dispatch = useDispatch()
   return (
@@ -47,6 +48,8 @@ function MainPage() {
         </section>
 
 
+      
+       
         <section className='flex sm:p-4 md:p-8   min-h-[40vh] slide-in-left '>
             <div className='flex   gap-8 rounded-md items-center justify-between sm:p-0 md:p-10 w-full'>
                <img loading={lazy} src={aboutus} className='sm:hidden md:block max-w-[50%] rounded-md'></img>
@@ -61,7 +64,15 @@ function MainPage() {
             </div>
             
         </section>
-   
+        {/* <section className='flex sm:p-4 md:p-8   min-h-[40vh] slide-in-left '>
+            <div className='flex   gap-8 rounded-md items-center justify-between sm:p-0 md:p-10 w-full'> */}
+               {/* <img loading={lazy} src={aboutus} className='sm:hidden md:block max-w-[50%] rounded-md'></img> */}
+              
+
+             {/* <Contactus/>
+            </div>
+            
+        </section> */}
      
     </main>
     <Footer/>

@@ -26,7 +26,7 @@ function QuestionContainerLearner({ id, question , level ,category ,setSolvedArr
          return <div className='min-h-[40rem] w-full flex items-center justify-center'><Loader color="yellow" type="dots" /></div>
        }
   return (
-    <div className='hover:scale-[1.009] flex shadow-md bg-primaryClr p-6 sm:flex-col md:flex-row rounded-md  gap-4 justify-between items-center overflow-hidden '>
+    <div className='hover:scale-[1.009] hover:shadow-lg flex shadow-md bg-primaryClr p-6 sm:flex-col md:flex-row rounded-md  gap-4 justify-between items-center overflow-hidden '>
     <div className="flex flex-col gap-2 w-full">
         <p className='opacity-50 text-sm'>{level}</p>
         <p className=''>{question}</p>

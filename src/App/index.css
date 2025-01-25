@@ -30,6 +30,11 @@ html.dark {
   background-image: linear-gradient(to top,rgb(202, 187, 93 ,0.1),transparent)
 
 }
+
+
+
+
+
 /* Ensure the carousel container has enough space for the dots */
 .react-multi-carousel-list {
   padding-bottom: 40px; /* Adds space for the dots below the carousel */
