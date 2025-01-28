@@ -5,13 +5,13 @@ import { setSubView } from '../../../../../redux/reducers/View/ViewSlice'
 import { USER_REGEX,PWD_REGEX,EMAIL_REGEX } from '../../../../../Components/ui/Form/Regex'
 import { useAddLearnerMutation } from '../../../../../redux/Api/LearnerApiSlice'
 import { notifications } from '@mantine/notifications'
+import { Loader } from '@mantine/core'
 import '@mantine/notifications/styles.css';
 function AddNewLearner() {
     const dispatch=useDispatch()
     const navigate = useNavigate()
-    const [ addLearner,{isLoading,isError,isSuccess} ] = useAddLearnerMutation()
+    const [ addLearner,{isLoading,isError,isSuccess,error} ] = useAddLearnerMutation()
     const errorref=useRef()
-    const userRef=useRef()
     const [name,setName]=useState('')
     const [validname,setValidName]=useState(false)
     const [email,SetEmail]=useState('')
@@ -37,11 +37,10 @@ function AddNewLearner() {
       });
     } },[isSuccess]
   )
-   useEffect(() =>{userRef.current.focus()}, [])
    useEffect(()=>{setErrorMsg('')},[name,email,pwd,confirmPwd])
     const handleSubmit=async(e)=>{
       e.preventDefault()
-      if(name==='' || email==='' || pwd==='' || confirmPwd===''){
+      if(name.trim()==='' || email.trim()==='' || pwd.trim()==='' || confirmPwd.trim()===''){
         setErrorMsg('Please fill all the fields')
         errorref.current.focus();
         return
@@ -52,7 +51,7 @@ function AddNewLearner() {
         return
       }
       try{
-        const res = await addLearner({email:email,password:pwd})
+        const res = await addLearner({email:email,password:pwd,displayName:name})
         setName('')
         SetEmail('')
         SetPwd('')
@@ -70,10 +69,18 @@ function AddNewLearner() {
            color: 'red'
         });
         setErrorMsg(err.message)
+        if(errorref.current){
         errorref.current.focus()
       }
       }
+      }
     console.log('Yop',name,email,pwd,confirmPwd)
+    if(isLoading){
+      return <div className='min-h-[40rem] w-full flex items-center justify-center'><Loader color="yellow" type="dots" /></div>
+    }
+    if(isError){
+      return <div className='min-h-[15rem] w-full flex items-center justify-center text-red-800 font-[700]'>An Error occured {error?.message}</div>
+  }
   return (
     <>
     <p className='flex  items-center p-2 opacity-50 hover:opacity-90' onClick={()=>{dispatch(setSubView(0));navigate(-1)}}>Back</p>
@@ -81,7 +88,7 @@ function AddNewLearner() {
   <p ref={errorref} className={`${errorMsg?'text-red-800 bg-red-100  flex items-center justify-center mt-4  p-2 rounded-md':'absolute left-[-10000px] top-[-10000px]'}`} aria-live="assertive">{errorMsg}</p>
          <form  className='flex flex-col gap-12 w-full' onSubmit={handleSubmit}>
          <fieldset className='flex flex-col gap-8 py-2 justify-center'>
-         <label htmlFor='name' className='flex flex-col gap-1  text-sm font-mono ' ref={userRef}>
+         <label htmlFor='name' className='flex flex-col gap-1  text-sm font-mono '>
              Name
              <input onChange={(e)=>setName(e.target.value)}  aria-describedby='namenote' aria-invalid={!validname} aria-label='name' required aria-required='true'
                  placeholder="Enter your name." id="name" value={name} name="name" type='text' className='text-black bg-lightBgclr font-semibold rounded-md border-[3px] border-primaryClr p-3'></input>

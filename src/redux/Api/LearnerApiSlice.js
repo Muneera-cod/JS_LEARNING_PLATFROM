@@ -1,7 +1,5 @@
 import { fakeBaseQuery,createApi } from "@reduxjs/toolkit/query/react";
 import { db } from "../../utils/config/firebaseConfig";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../utils/config/firebaseConfig";
 import { where, collection, getDocs, doc, getDoc, query, setDoc ,serverTimestamp } from "firebase/firestore";
  export const learnerApi = createApi({
     reducerPath: 'learnerApi',
@@ -39,6 +37,10 @@ import { where, collection, getDocs, doc, getDoc, query, setDoc ,serverTimestamp
         addLearner: builder.mutation({
             queryFn: async (learner) => {
                 try {
+                    if (!learner.email || !learner.password || !learner.displayName) {
+                        throw new Error('Email, password, and displayName are required.');
+                    }
+
                     // Send request to the backend server for user creation
                     const response = await fetch('http://localhost:5000/create-learner', {
                         method: 'POST',
@@ -58,6 +60,12 @@ import { where, collection, getDocs, doc, getDoc, query, setDoc ,serverTimestamp
                     }
 
                     const data = await response.json();
+                    await setDoc(doc(db, 'users', data.uid), {
+                        email: learner.email,
+                        displayName: learner.displayName,
+                        role: 'learner',
+                        createdAt: serverTimestamp()
+                    });
                     return { data };
                 } catch (error) {
                     return { error: { message: error.message } };
@@ -84,6 +92,25 @@ import { where, collection, getDocs, doc, getDoc, query, setDoc ,serverTimestamp
             },
             invalidatesTags: ['Learner']
         }),
+        deleteLearner: builder.mutation({
+            queryFn: async (learnerId) => {
+                try {
+                    // Send request to the backend server for user deletion
+                    const response = await fetch(`http://localhost:5000/delete-learner/${learnerId}`, {
+                        method: 'DELETE'
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to delete learner');
+                    }
+
+                    return { data: learnerId };
+                } catch (error) {
+                    return { error: { message: error.message } };
+                }
+            },
+            invalidatesTags: ['Learner']
+        })
     })
  })
- export const { useFetchLearnersQuery,useFetchLearnerQuery,useAddLearnerMutation,useUpdateLearnerMutation } = learnerApi
+ export const { useFetchLearnersQuery,useFetchLearnerQuery,useAddLearnerMutation,useUpdateLearnerMutation,useDeleteLearnerMutation   } = learnerApi

@@ -59,7 +59,7 @@ export const adminrouter = createBrowserRouter([
         ),
         children:[
               {path:'add_learner', element:<ProtectedRoutes element={<AddNewLearner/>} currUserRole={'admin'}></ProtectedRoutes>},
-              {path:':learner_id',element:<ProtectedRoutes element={<LearnerView/>} currUserRole={'admin'}></ProtectedRoutes>}
+              {path:':id',element:<ProtectedRoutes element={<LearnerView/>} currUserRole={'admin'}></ProtectedRoutes>}
         ]
       }
     ]
