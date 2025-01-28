@@ -33,9 +33,9 @@ function ProfileDetails() {
         });}
     },[isSuccess,isLoading])
   return (
-    <div className='flex flex-col justify-between px-10 py-16 sm:gap-[1rem] md:gap-[2px] h-full shadow  sm:basis-full lg:basis-1/2 rounded-md opacity-50'>
+    <div className='flex flex-col justify-between px-10 py-16 sm:gap-[1rem] md:gap-[2px] h-full  sm:basis-full lg:basis-1/2 rounded-md opacity-50'>
       
-    <div className='flex flex-col w-full sm:min-h-[300px] gap-[1rem]'>
+    <div className='flex flex-col w-full sm:min-h-[300px]  gap-[1rem]'>
     { !auth.currentUser?.emailVerified ? <button className='p-4 bg-primaryClr hover:bg-secondaryClr rounded-md' onClick={handleVerifyEmail}>Verify your Email</button> : null }
 
      <div className='flex flex-col  py-2 gap-2'>

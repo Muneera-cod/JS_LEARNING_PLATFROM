@@ -4,8 +4,8 @@ import { useFetchQuestionsQuery } from "../../../../../redux/Api/QuestionApiSlic
 import { useFetchUserProgressQuery } from "../../../../../redux/Api/UserProgressApiSlice"
 import { Loader } from "@mantine/core"
 import { useEffect,useState } from "react"
+import '@mantine/core/styles.css';
 function LearnersProgress({ id }) {
-  
   const { data:progressData ,isLoading :loading ,isError : error } = useFetchUserProgressQuery(id)
   const { data:questions , isLoading ,isError } = useFetchQuestionsQuery()
   const [totalEasy,setTotalEasy] = useState([])

@@ -32,7 +32,9 @@ html.dark {
 }
 
 
-
+::-webkit-scrollbar {
+  display: none;
+}
 
 
 /* Ensure the carousel container has enough space for the dots */

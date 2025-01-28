@@ -17,7 +17,7 @@ function Profile() {
 
     <div className='flex sm:flex-col md:flex-row gap-[1rem] h-full p-[20px] md:items-center sm:justify-center'>
 
-          <div className='flex flex-col sm:basis-full md:basis-1/2 h-full gap-[1rem] justify-center'>
+          <div className='flex flex-col sm:basis-full md:basis-1/2 h-full gap-[1rem]  justify-center'>
              <ProfileCard popUp={popUp} setPopUp={setPopUp} photo={ auth.currentUser?.photoURL ? auth.currentUser?.photoURL : profilepic } name={auth.currentUser?.displayName ? auth.currentUser?.displayName : 'No name added'} email={auth.currentUser?.email}/>
               <Activity/>
           </div>
