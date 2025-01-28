@@ -51,7 +51,7 @@ function LearnWithAI() {
         setOutput(`Error: ${error.message}`);
     } finally {
         console.log = originalConsoleLog; // Restore console.log
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        // window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     }
 };
 
@@ -61,7 +61,7 @@ function LearnWithAI() {
    <>
   <IconArrowLeft className="opacity-50 hover:opacity-100 text-lightsecondaryClr" onClick={()=>navigate('/')}/>
 
-    <div className='grid lg:grid-cols-2 gap-8 py-6 md:px-4 md:min-h-full '>
+    <div className='grid lg:grid-cols-2 gap-8 py-6 md:px-4 h-[90vh]'>
       <button onClick={()=>setAiChatBox(true)} className={`bg-secondaryClr bg-opacity-20  border-2 border-primaryClr text-zinc-600  dark:text-white py-2 px-6 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr shadow-md fixed bottom-8 right-12 `}>Ask AI</button>
         <div className='dark:bg-[#1e1e1e] bg-white flex shadow-md flex-col basis-1/2 border-2 border-primaryClr rounded-md  py-4  shadow-sm sm:min-h-[400px] lg:min-h-full overflow-hidden'>
             <p className='sm:text-sm md:text-md font-[700] text-lg opacity-60 px-3 pb-3 shadow-md  uppercase text-black dark:text-white'>javascript Code Editor</p>
