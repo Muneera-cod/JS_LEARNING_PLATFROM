@@ -16,7 +16,7 @@ function LearnerPRofile() {
   const [popUp, setPopUp] = useState(false)
   return (
     <>
-     <IconArrowLeft className="opacity-50 hover:opacity-100 text-lightsecondaryClr" onClick={()=>navigate('/')}/>
+     <IconArrowLeft className="cursor-pointer opacity-50 hover:opacity-100 text-lightsecondaryClr" onClick={()=>navigate('/')}/>
     <div className='flex sm:flex-col lg:flex-row gap-[1rem] h-full py-4 md:px-4 lg:items-center sm:justify-center'>
      
             <div className='flex flex-col sm:basis-full lg:basis-1/2 h-full gap-[1rem] justify-center'>

@@ -33,7 +33,7 @@ function LoginPage() {
     view === 0 && <MainPage/>
    }
     { view === 1 && <main className='flex items-center justify-center pt-6 bg-mainClr dark:bg-darkmodeMainClr'> 
-      { (currform ===0 || currform === 1) && <IconArrowLeft onClick={()=>dispatch(setView(0))} className='basis-1/6 absolute sm:top-24 md:top-24 sm:left-6 md:left-10  opacity-50 hover:opacity-100 text-lightsecondaryClr '></IconArrowLeft>}
+      { (currform ===0 || currform === 1) && <IconArrowLeft onClick={()=>dispatch(setView(0))} className='cursor-pointer basis-1/6 absolute sm:top-24 md:top-24 sm:left-6 md:left-10  opacity-50 hover:opacity-100 text-lightsecondaryClr dark:text-secondaryClr'></IconArrowLeft>}
 
      
      <section className='w-full h-full flex bg-mainClr dark:bg-darkmodeMainClr  items-center justify-center flex-row sm:px-6 md:px-14 lg:px-16 xl:px-18 sm:py-10 md:py-14 lg:py-16 '>

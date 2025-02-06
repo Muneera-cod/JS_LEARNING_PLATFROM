@@ -33,7 +33,7 @@ function QuestionContainerLearner({ id, question , level ,category ,setSolvedArr
         <p className='opacity-50 text-sm'>{category}</p>
       </div>
       
-      <div onClick={()=>questionView(id)}  className=" cursor-pointer border-[1px] flex gap-4 border-primaryClr sm:min-w-full md:min-w-fit h-fit px-6 py-2 items-center justify-center rounded-md bg-primaryClr opacity-80">
+      <div onClick={()=>questionView(id)}  className="hover:bg-secondaryClr hover:bg-opacity-20  cursor-pointer border-[1px] flex gap-4 border-primaryClr sm:min-w-full md:min-w-fit h-fit px-6 py-2 items-center justify-center rounded-md bg-primaryClr opacity-80">
           { isSuccess && <p>{ data ? 'Solved' : 'Solve Challenge'}</p>}  { data && <IconCheckbox/> }
            
         </div> 

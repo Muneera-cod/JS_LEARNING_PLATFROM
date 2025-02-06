@@ -44,7 +44,7 @@ function Questions() {
     <>
     { subview === 0 &&
       <>
-      <IconArrowLeft className="opacity-50 hover:opacity-100 text-lightsecondaryClr" onClick={()=>navigate('/')}/>
+      <IconArrowLeft className="cursor-pointer opacity-50 hover:opacity-100 text-lightsecondaryClr" onClick={()=>navigate('/')}/>
 
       <div className='flex justify-between items-center'>
         <SeachBar searchValue={searchValue} onChangeFunction={handleSearchChange} text={'by Title'}/>

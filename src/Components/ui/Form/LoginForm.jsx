@@ -66,14 +66,14 @@ console.log('errorMsg',errorMsg)
           
         </form>
         <div className='flex flex-col gap-4 items-center'>
-        <p onClick={()=>setCurrForm(2)} className='cursor-pointer text-mainTextclr dark:text-darkmodeTextClr  dark:hover:text-[#f8e1b9]  sm:text-[13px] md:text-[14px] hover:text-[#f8e1b9] sm:inline'>
+        <p onClick={()=>setCurrForm(2)} className='cursor-pointer text-mainTextclr dark:text-darkmodeTextClr  dark:hover:text-[#f8e1b9] hover:text-[#8b5e0c] sm:text-[13px] md:text-[14px]  sm:inline'>
           Forgot password...?
            
             </p>
-        <p className='  w-fit  text-mainTextclr dark:text-darkmodeTextClr  dark:hover:text-[#f8e1b9]  sm:text-[13px] md:text-[14px]  hover:text-[#f8e1b9] sm:inline'>
+        <p className='  w-fit  text-mainTextclr dark:text-darkmodeTextClr  sm:text-[13px] md:text-[14px]   sm:inline'>
           Not joined to learn javaScript?...
             {/* <Link to={'/'}> */}
-            <span style={{fontStyle:'italic',display:'inline'}} className='hover:text-[#8b5e0c] cursor-pointer' onClick={click} >SignUp</span>
+            <span style={{fontStyle:'italic',display:'inline'}} className=' text-mainTextclr dark:text-darkmodeTextClr  dark:hover:text-[#f8e1b9] hover:text-[#8b5e0c] cursor-pointer' onClick={click} >SignUp</span>
             {/* </Link> */}
             </p>
           </div>  

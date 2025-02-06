@@ -59,7 +59,7 @@ function LearnWithAI() {
   console.log(output)
   return (
    <>
-  <IconArrowLeft className="opacity-50 hover:opacity-100 text-lightsecondaryClr" onClick={()=>navigate('/')}/>
+  <IconArrowLeft className="cursor-pointer opacity-50 hover:opacity-100 text-lightsecondaryClr" onClick={()=>navigate('/')}/>
 
     <div className='grid lg:grid-cols-2 gap-8 py-6 md:px-4 h-[90vh]'>
       <button onClick={()=>setAiChatBox(true)} className={`bg-secondaryClr bg-opacity-20  border-2 border-primaryClr text-zinc-600  dark:text-white py-2 px-6 min-w-fit rounded-lg  font-mono font-bold hover:bg-primaryClr hover:text-secondaryClr hover:border-secondaryClr shadow-md fixed bottom-8 right-12 `}>Ask AI</button>
