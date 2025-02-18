@@ -18,7 +18,7 @@ function LoginPage() {
       console.log('view',view)
   return (
     <>
-      <header className='px-8 py-6 h-[70px]  border-[0.5px] border-primaryClr bg-mainClr dark:bg-darkmodeMainClr flex justify-between  gap-6 items-center sticky top-0  z-10 text-textCLr dark:text-darkmodeTextClr '>
+      <header className='sm:px-4 md:px-8 py-6 h-[70px]  border-[0.5px] border-primaryClr bg-mainClr dark:bg-darkmodeMainClr flex justify-between  gap-6 items-center sticky top-0  z-10 text-textCLr dark:text-darkmodeTextClr '>
        <div className='flex items-center gap-2 '><img className='max-w-12 max-h-8' src={logo}/><p className='uppercase sm:text-[12px] md:text-md font-[700]'>MAster .JS</p></div>
     <div className='flex gap-[1.5rem] items-center px-2'>
       {/* <p className='font-[700] text-[16px] hover:opacity-70 cursor-pointer'>About</p>
