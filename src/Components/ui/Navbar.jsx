@@ -8,7 +8,7 @@ function Navbar() {
      const [logout]=useLogoutMutation()
       const darkmode=useSelector((state)=>state.theme.isDarkmode)
   return (
-    <header className='pt-6 pb-8 px-8 bg-mainClr dark:bg-darkmodeMainClr flex justify-between  gap-6 items-center sticky top-0  z-10 text-textCLr dark:text-darkmodeTextClr '>
+    <header className='pt-6 pb-8 sm:px-4 md:px-8 bg-mainClr dark:bg-darkmodeMainClr flex justify-between  gap-6 items-center sticky top-0  z-10 text-textCLr dark:text-darkmodeTextClr '>
        <div className='flex items-center gap-2 md:ml-14'><img className='max-w-10 max-h-6' src={logo}/><p className='uppercase sm:text-[10px] md:text-md font-[700]'>MAster JS</p></div>
     <div className='flex gap-[1.5rem] items-center'>
      {!darkmode?<IconSun onClick={()=>dispatch(toggleMode())} title='lightmode' className='sm:w-[21px] md:w-[25px] sm:w-[21px] md:h-[25px]'/>:<IconMoonFilled className='sm:w-[21px] md:w-[25px] sm:w-[21px] md:h-[25px]' onClick={()=>dispatch(toggleMode())} title='darkmode'/>}
